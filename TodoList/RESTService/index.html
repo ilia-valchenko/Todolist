@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="TodoList">
+<head>
+    <meta charset="utf-8">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="Content/bootstrap.css">
+    <link rel="stylesheet" href="Content/style.css">
+</head>
+<body ng-controller="TodoListController as list">
+    <h1>To-do list</h1>
+
+    <div id="main">
+        <article ng-repeat="task in tasks track by $index">
+            <h3>{{task.Title}}</h3>
+            <p>{{task.Description}}</p>
+            <small>Date: {{task.PublishDate | date: 'MM/dd/yyyy @ h:mma'}}</small>
+            <footer><small>Is completed: {{task.IsCompleted}}</small></footer>
+        </article>
+    </div>
+
+    <input type="button" id="create-button" class="btn btn-info" ng-click="showPopup()" value="Create new item" />
+
+    <form method="post" id="popup" ng-show="isVisiblePopup" ng-submit="submitNewTask()">
+        <label for="title">Title:</label>
+        <input type="text" ng-model="title" />
+
+        <label for="description">Description:</label>
+        <textarea ng-model="description"></textarea>
+
+        <input type="submit" class="btn" value="Submit" />
+        <input type="button" class="btn" value="Close" ng-click="hidePopup()" />
+    </form>
+
+    <footer class="main-footer">
+        Created by <a href="http://www.github.com/ilia-valchenko" target="_blank" title="Follow me on GitHub">Ilya Valchanka</a>.
+    </footer>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/repository.js"></script>
+    <script src="Scripts/script.js"></script>
+</body>
+</html>

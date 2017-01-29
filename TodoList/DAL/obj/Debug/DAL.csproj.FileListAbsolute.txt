@@ -1,0 +1,16 @@
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\App_Data\Taskstorage.mdf
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\App_Data\Taskstorage_log.ldf
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\hibernate.cfg.xml
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\DAL.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\DAL.pdb
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\DAL.Interfaces.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\Iesi.Collections.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\NHibernate.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\ORM.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\DAL.Interfaces.pdb
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\ORM.pdb
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\Iesi.Collections.xml
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\NHibernate.xml
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\obj\Debug\DAL.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\obj\Debug\DAL.pdb

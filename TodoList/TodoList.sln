@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM", "ORM\ORM.csproj", "{04EB24D4-C392-4599-B67D-C548C4DA9F7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL.Interfaces", "DAL.Interfaces\DAL.Interfaces.csproj", "{A5F9B29E-01DC-4185-814F-981D66A54308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{0C32DDF9-1509-4FC8-8E72-D69DDE26ACAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTService", "RESTService\RESTService.csproj", "{FD6E79D6-901B-4718-8D65-FDF997EC8AFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04EB24D4-C392-4599-B67D-C548C4DA9F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04EB24D4-C392-4599-B67D-C548C4DA9F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04EB24D4-C392-4599-B67D-C548C4DA9F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04EB24D4-C392-4599-B67D-C548C4DA9F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5F9B29E-01DC-4185-814F-981D66A54308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F9B29E-01DC-4185-814F-981D66A54308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F9B29E-01DC-4185-814F-981D66A54308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F9B29E-01DC-4185-814F-981D66A54308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C32DDF9-1509-4FC8-8E72-D69DDE26ACAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C32DDF9-1509-4FC8-8E72-D69DDE26ACAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C32DDF9-1509-4FC8-8E72-D69DDE26ACAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C32DDF9-1509-4FC8-8E72-D69DDE26ACAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6E79D6-901B-4718-8D65-FDF997EC8AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6E79D6-901B-4718-8D65-FDF997EC8AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6E79D6-901B-4718-8D65-FDF997EC8AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6E79D6-901B-4718-8D65-FDF997EC8AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\App_Data\Taskstorage.mdf
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\App_Data\Taskstorage_log.ldf
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\hibernate.cfg.xml
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\ORM.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\ORM.pdb
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\Iesi.Collections.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\NHibernate.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\Iesi.Collections.xml
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\NHibernate.xml
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\obj\Debug\ORM.dll
+c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\obj\Debug\ORM.pdb

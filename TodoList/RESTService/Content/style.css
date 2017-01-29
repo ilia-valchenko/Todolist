@@ -1,0 +1,46 @@
+body {
+    margin: 15px;
+}
+
+h1 {
+    border-bottom: 3px solid #000000;
+    padding: 0 0 5px 0;
+}
+
+#popup {
+    background-color: #b4b6ba;
+    width: 220px;
+    height: 310px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    padding: 15px 20px 15px 20px;
+    margin: -100px 0 0 -110px; /* [-(height/2)px 0 0 -(width/2)px] */
+}
+
+#popup input[type=text] {
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#popup textarea {
+    width: 200px;
+    height: 100px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+#popup label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.main-footer {
+    margin: 20px 0 0 0;
+}
+
+#create-button {
+    margin: 15px 0 0 0;
+}
