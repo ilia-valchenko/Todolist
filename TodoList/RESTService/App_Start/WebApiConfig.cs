@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using Microsoft.Practices.Unity;
+using DAL.Interfaces.Repository.ModelRepository;
+using DAL.Concrete;
 
 namespace RESTService
 {
@@ -9,9 +9,10 @@ namespace RESTService
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            UnityContainer container = new UnityContainer();
+            container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
+            config.DependencyResolver = new Infrastructure.UnityResolver(container);
 
-            // Web API routes
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

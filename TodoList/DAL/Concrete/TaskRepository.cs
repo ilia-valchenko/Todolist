@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using DAL.Interfaces.DTO;
-using DAL.Interfaces.Repository;
 using NHibernate;
 using DAL.Helpers;
 using DAL.Mappers;
 using ORM.Models;
+using DAL.Interfaces.Repository.ModelRepository;
 
 namespace DAL.Concrete
 {
-    public class TaskRepository : IRepository<DalTask>
+    public class TaskRepository : ITaskRepository
     {
         public void Create(DalTask entity)
         {
@@ -79,6 +79,11 @@ namespace DAL.Concrete
             {
                 return session.Get<Task>(id).ToDalTaks();
             }
+        }
+
+        public IEnumerable<DalTask> GetTasksByDate(DateTime date)
+        {
+            throw new NotImplementedException();
         }
     }
 }

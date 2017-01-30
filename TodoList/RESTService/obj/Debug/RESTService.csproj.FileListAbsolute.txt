@@ -52,3 +52,12 @@ c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\RESTService\obj\De
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\App_Data\Taskstorage.mdf
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\App_Data\Taskstorage_log.ldf
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\hibernate.cfg.xml
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.Unity.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.Unity.xml
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
