@@ -9,4 +9,3 @@ c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\Iesi
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\bin\Debug\NHibernate.xml
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\obj\Debug\ORM.dll
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\obj\Debug\ORM.pdb
-C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\ORM\obj\Debug\ORM.csprojResolveAssemblyReference.cache

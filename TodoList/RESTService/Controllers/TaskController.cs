@@ -1,5 +1,7 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
 using DAL.Interfaces.Repository.ModelRepository;
+using DAL.Interfaces.DTO;
 
 namespace RESTService.Controllers
 {
@@ -14,6 +16,16 @@ namespace RESTService.Controllers
         public IHttpActionResult ShowTodoList()
         {
             return Json(taskRepository?.GetAll());
+        }
+
+        [HttpPost]
+        public IHttpActionResult AddNewTask(DalTask task)
+        {
+            task.PublishDate = DateTime.Now;
+            task.IsCompleted = false;
+
+            taskRepository?.Create(task);
+            return Json(task);
         }
 
         private ITaskRepository taskRepository;

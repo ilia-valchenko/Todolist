@@ -4,7 +4,7 @@
     todoListModule.controller('TodoListController', ['$scope', '$http', 'Tasks', function ($scope, $http, Tasks) {
 
         $scope.tasks = [];
-        $scope.isVisiblePopup = true;
+        $scope.isVisiblePopup = false;
         
         function Init() {
             Tasks.getAll().then(function (response) {

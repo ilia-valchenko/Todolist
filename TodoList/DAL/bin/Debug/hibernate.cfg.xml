@@ -5,7 +5,9 @@
     <property name="dialect">NHibernate.Dialect.MsSql2012Dialect</property>
     <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
     <property name="connection.connection_string">
-      Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\App_Data\Taskstorage.mdf";Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent =ReadWrite;MultiSubnetFailover=False
+      <!--Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\ORM\App_Data\Taskstorage.mdf";Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent =ReadWrite;MultiSubnetFailover=False-->
+     Data Source=|DataDirectory|\App_Data\Taskstorage.mdf";Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent =ReadWrite;MultiSubnetFailover=False
+      <!--|DataDirectory|-->
     </property>
     <property name="show_sql">true</property>
 
