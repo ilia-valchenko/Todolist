@@ -61,3 +61,7 @@ C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Mi
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.Unity.xml
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.Unity.Configuration.xml
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\BLL.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\BLL.Interfaces.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\BLL.Interfaces.pdb
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\BLL.pdb

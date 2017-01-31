@@ -2,6 +2,8 @@
 using Microsoft.Practices.Unity;
 using DAL.Interfaces.Repository.ModelRepository;
 using DAL.Concrete;
+using BLL.Interfaces.Services.EntityService;
+using BLL.Concrete;
 
 namespace RESTService
 {
@@ -11,6 +13,7 @@ namespace RESTService
         {
             UnityContainer container = new UnityContainer();
             container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<ITaskService, TaskService>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new Infrastructure.UnityResolver(container);
 
             config.MapHttpAttributeRoutes();

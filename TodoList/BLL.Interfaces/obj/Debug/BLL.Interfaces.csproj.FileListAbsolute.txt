@@ -1,0 +1,4 @@
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL.Interfaces\bin\Debug\BLL.Interfaces.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL.Interfaces\bin\Debug\BLL.Interfaces.pdb
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL.Interfaces\obj\Debug\BLL.Interfaces.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL.Interfaces\obj\Debug\BLL.Interfaces.pdb

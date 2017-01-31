@@ -166,6 +166,14 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL.Interfaces\BLL.Interfaces.csproj">
+      <Project>{c0944217-8f5a-42c4-aec9-6bf4be8d2248}</Project>
+      <Name>BLL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{f4c740ca-20bd-4884-8266-2707a74f9597}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL.Interfaces\DAL.Interfaces.csproj">
       <Project>{a5f9b29e-01dc-4185-814f-981d66a54308}</Project>
       <Name>DAL.Interfaces</Name>
