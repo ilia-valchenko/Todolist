@@ -5,6 +5,10 @@ using BLL.Interfaces.Entities;
 using BLL.Interfaces.Services.EntityService;
 using DAL.Interfaces.Repository.ModelRepository;
 using BLL.Mappers;
+// test
+using Elasticsearch.Net;
+using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace BLL.Concrete
 {
@@ -13,6 +17,9 @@ namespace BLL.Concrete
         public TaskService(ITaskRepository taskRepository)
         {
             this.taskRepository = taskRepository;
+            // sets default setting 
+            // port: 9200 etc.
+            elasticClient = new ElasticLowLevelClient();
         }
 
         public void Create(BllTask entity)
@@ -21,6 +28,26 @@ namespace BLL.Concrete
                 throw new ArgumentNullException("The bll task entity is null.");
 
             taskRepository?.Create(entity.ToDalTask());
+
+            try
+            {
+                elasticClient.Index<BllTask>("taskmanager", "tasks", JsonConvert.SerializeObject(entity));
+            }
+            catch(JsonSerializationException serializationException)
+            {
+                // write it into a logfile
+                Debug.WriteLine($"Serialization Exception. Error message: {serializationException.Message}. StackTrace: {serializationException.StackTrace}");
+            }
+            catch(ElasticsearchClientException elasticClientException)
+            {
+                // write it into a logfile
+                Debug.WriteLine($"Elasticsearch Client Exception. Error message: {elasticClientException.Message}. StackTrace: {elasticClientException.StackTrace}");
+            }
+            catch(Exception exc)
+            {
+                // write it into a logfile
+                Debug.WriteLine($"Error. Message: {exc.Message}. StackTrace: {exc.StackTrace}.");
+            }
         }
 
         public void Delete(int id)
@@ -58,5 +85,6 @@ namespace BLL.Concrete
         }
 
         private ITaskRepository taskRepository;
+        private ElasticLowLevelClient elasticClient;
     }
 }

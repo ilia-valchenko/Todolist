@@ -18,3 +18,11 @@ C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Iesi
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\obj\Debug\BLL.dll
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\obj\Debug\BLL.pdb
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Elasticsearch.Net.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Nest.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Elasticsearch.Net.pdb
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Elasticsearch.Net.xml
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Nest.pdb
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Nest.xml
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Newtonsoft.Json.xml

@@ -2,4 +2,3 @@ c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL.Interfaces\bin
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\DAL.Interfaces.pdb
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.dll
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.pdb
-C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.csprojResolveAssemblyReference.cache

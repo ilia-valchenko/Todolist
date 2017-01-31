@@ -65,3 +65,9 @@ C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\BL
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\BLL.Interfaces.dll
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\BLL.Interfaces.pdb
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\BLL.pdb
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Nest.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Elasticsearch.Net.dll
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Nest.pdb
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Nest.xml
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Elasticsearch.Net.pdb
+C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Elasticsearch.Net.xml
