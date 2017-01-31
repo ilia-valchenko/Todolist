@@ -14,3 +14,11 @@ c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\bin\Debug\NHib
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\obj\Debug\DAL.dll
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL\obj\Debug\DAL.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL\bin\Debug\Elasticsearch.Net.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL\bin\Debug\Nest.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL\bin\Debug\Elasticsearch.Net.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL\bin\Debug\Elasticsearch.Net.xml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL\bin\Debug\Nest.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL\bin\Debug\Nest.xml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL\bin\Debug\Newtonsoft.Json.xml

@@ -14,6 +14,7 @@ namespace RESTService
             UnityContainer container = new UnityContainer();
             container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ITaskService, TaskService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IElasticRepository, ElasticRepository>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new Infrastructure.UnityResolver(container);
 
             config.MapHttpAttributeRoutes();

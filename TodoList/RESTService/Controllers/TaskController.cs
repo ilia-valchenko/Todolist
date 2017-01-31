@@ -28,6 +28,15 @@ namespace RESTService.Controllers
             return Json(task);
         }
 
+        [HttpGet]
+        public IHttpActionResult GetQueryResults(string query)
+        {
+            if (String.IsNullOrEmpty(query))
+                return null;
+
+            return Json(taskService?.GetQueryResults(query));
+        }
+
         private ITaskService taskService;
     }
 }

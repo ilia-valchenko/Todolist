@@ -2,3 +2,12 @@ c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL.Interfaces\bin
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\DAL.Interfaces.pdb
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.dll
 c:\users\ivalc\documents\visual studio 2015\Projects\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Elasticsearch.Net.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Nest.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Newtonsoft.Json.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Elasticsearch.Net.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Elasticsearch.Net.xml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Nest.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Nest.xml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Newtonsoft.Json.xml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.csprojResolveAssemblyReference.cache

@@ -52,6 +52,42 @@
                 });
         };
 
+        $scope.getQueryResults = function () {
+
+            var data = {
+                query: {
+                    match: {
+                        Title: $scope.query
+                    }
+                }
+            };
+
+            $http.post(
+                'http://localhost:9200/taskmanager/tasks/_search',
+                JSON.stringify(data),
+                {
+                    // Avoid CORS
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+                        'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+                        'Content-Type': 'application/json'
+                    }
+                }
+            ).then(function (response) {
+                console.log("Tasks which were given by query:");
+
+                $scope.tasks = [];
+                var res = response.data.hits.hits;
+
+                for (var i = 0; i < res.length; i++)
+                    $scope.tasks.push(res[i]._source);
+            },
+                function () {
+                    console.log("Something went wrong. New task wasn't added.");
+                });
+        };
+
     }]);
 
 })();

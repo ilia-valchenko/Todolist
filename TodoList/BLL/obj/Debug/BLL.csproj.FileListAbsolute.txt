@@ -1,6 +1,3 @@
-C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\App_Data\Taskstorage.mdf
-C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\App_Data\Taskstorage_log.ldf
-C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\hibernate.cfg.xml
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\BLL.dll
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\BLL.pdb
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\BLL.Interfaces.dll
@@ -26,3 +23,6 @@ C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Elas
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Nest.pdb
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Nest.xml
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\BLL\bin\Debug\App_Data\Taskstorage.mdf
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\BLL\bin\Debug\App_Data\Taskstorage_log.ldf
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\BLL\bin\Debug\hibernate.cfg.xml

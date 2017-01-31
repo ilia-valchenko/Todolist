@@ -7,5 +7,6 @@ namespace BLL.Interfaces.Services.EntityService
     public interface ITaskService : IService<BllTask>
     {
         IEnumerable<BllTask> GetTasksByDate(DateTime date);
+        IEnumerable<BllTask> GetQueryResults(string query);
     }
 }
