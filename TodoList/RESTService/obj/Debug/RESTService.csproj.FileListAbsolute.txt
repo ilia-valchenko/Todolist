@@ -71,10 +71,10 @@ C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Ne
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Nest.xml
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Elasticsearch.Net.pdb
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\RESTService\bin\Elasticsearch.Net.xml
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\ApplicationInsights.config
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\roslyn\csc.exe
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\roslyn\Microsoft.CodeAnalysis.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\roslyn\Microsoft.CSharp.Core.targets
@@ -86,7 +86,6 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\roslyn\VBCSCompiler.e
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\roslyn\VBCSCompiler.exe.config
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\App_Data\Taskstorage.mdf
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\App_Data\Taskstorage_log.ldf
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\hibernate.cfg.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\RESTService.dll.config
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\RESTService.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\RESTService.pdb
@@ -94,6 +93,7 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.Interfaces.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\DAL.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\DAL.Interfaces.dll
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.AI.Agent.Intercept.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.AI.DependencyCollector.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -106,19 +106,22 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.S
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.Configuration.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Newtonsoft.Json.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\ORM.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Net.Http.Formatting.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Web.Http.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Web.Http.WebHost.dll
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\NHibernate.dll
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\FluentNHibernate.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Iesi.Collections.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.Interfaces.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\DAL.Interfaces.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\DAL.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\ORM.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.AI.DependencyCollector.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.AI.Web.xml
@@ -130,17 +133,16 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.S
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.Configuration.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Newtonsoft.Json.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Net.Http.Formatting.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Web.Http.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Web.Http.WebHost.xml
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\NHibernate.xml
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\FluentNHibernate.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\FluentNHibernate.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Iesi.Collections.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.csprojResolveAssemblyReference.cache
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.dll
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.xml

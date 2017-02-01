@@ -11,6 +11,7 @@ C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin
 C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Nest.xml
 C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\bin\Debug\Newtonsoft.Json.xml
 C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.csprojResolveAssemblyReference.cache
+D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\bin\Debug\DAL.Interfaces.dll.config
 D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\bin\Debug\DAL.Interfaces.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\bin\Debug\DAL.Interfaces.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\bin\Debug\Elasticsearch.Net.dll
@@ -23,4 +24,4 @@ D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\bin\Debug\Nest.xml
 D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\bin\Debug\Newtonsoft.Json.xml
 D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\bin\Debug\DAL.Interfaces.dll.config
+D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.csprojResolveAssemblyReference.cache

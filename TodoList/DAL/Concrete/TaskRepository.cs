@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DAL.Interfaces.DTO;
 using NHibernate;
-using DAL.Helpers;
+using ORM.Helpers;
 using DAL.Mappers;
 using ORM.Models;
 using DAL.Interfaces.Repository.ModelRepository;

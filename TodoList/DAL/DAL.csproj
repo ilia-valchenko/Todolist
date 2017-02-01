@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Concrete\ElasticRepository.cs" />
     <Compile Include="Concrete\TaskRepository.cs" />
-    <Compile Include="Helpers\NhibernateHelper.cs" />
     <Compile Include="Mappers\DalTaskMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

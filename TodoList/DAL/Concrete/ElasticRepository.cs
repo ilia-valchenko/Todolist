@@ -12,7 +12,9 @@ namespace DAL.Concrete
         public ElasticRepository(/*IElasticClient elasticClient*/)
         {
             //this.elasticClient = elasticClient;
-            elasticClient = new ElasticClient();
+
+            ConnectionSettings settings = new ConnectionSettings(new Uri("http://localhost:9200")).DefaultIndex("taskmanager").DefaultTypeNameInferrer(t => "tasks");
+            elasticClient = new ElasticClient(settings);
         }
 
         #region CRUD
@@ -23,7 +25,7 @@ namespace DAL.Concrete
 
             try
             {
-                elasticClient.Index(entity, t => t.Index("taskmanager").Type("tasks"));
+                elasticClient.Index(entity);
             }
             catch (Exception exc)
             {
@@ -56,13 +58,24 @@ namespace DAL.Concrete
 
         public IEnumerable<DalTask> GetQueryResults(string query)
         {
-            if (String.IsNullOrEmpty(query))
-                return null;
-            
+            var res = elasticClient.Search<DalTask>(s => s.Type("tasks").Query(q => q.Match(m => m.Field(f => f.Title).Query("serpico"))));
             // stub
             return null;
         }
         #endregion
+
+        public IEnumerable<DalTask> NewGetById(int id)
+        {
+            return elasticClient.Search<DalTask>(s => s.Type("tasks")
+            .Query(q => q
+                .Bool(b => b
+                    .Should(
+                        bs => bs.Term(p => p.Id, id)
+                    )
+                )
+            )
+            ).Documents;
+        }
 
         private IElasticClient elasticClient;
     }
