@@ -26,3 +26,28 @@ C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Newt
 C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\BLL\bin\Debug\App_Data\Taskstorage.mdf
 C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\BLL\bin\Debug\App_Data\Taskstorage_log.ldf
 C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\BLL\bin\Debug\hibernate.cfg.xml
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\BLL.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\BLL.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\BLL.Interfaces.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\DAL.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\DAL.Interfaces.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Elasticsearch.Net.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Newtonsoft.Json.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Nest.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\ORM.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\NHibernate.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Iesi.Collections.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\BLL.Interfaces.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\DAL.Interfaces.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\DAL.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Elasticsearch.Net.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Elasticsearch.Net.xml
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Newtonsoft.Json.xml
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Nest.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Nest.xml
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\ORM.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\NHibernate.xml
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Iesi.Collections.xml
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\obj\Debug\BLL.dll
+D:\GitProjects\TodolistNhibernate\TodoList\BLL\obj\Debug\BLL.pdb

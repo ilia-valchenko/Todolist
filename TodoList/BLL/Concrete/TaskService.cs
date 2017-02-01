@@ -17,6 +17,7 @@ namespace BLL.Concrete
             this.elasticRepository = elasticRepository;
         }
 
+        #region CRUD
         public void Create(BllTask entity)
         {
             if (entity == null)
@@ -28,15 +29,34 @@ namespace BLL.Concrete
             elasticRepository?.Create(task);
         }
 
+        public void Update(BllTask entity)
+        {
+            if (entity == null)
+                throw new ArgumentNullException("The bll task entity is null.");
+
+            taskRepository?.Update(entity.ToDalTask());
+        }
+
         public void Delete(int id)
         {
             if (id < 0)
                 throw new ArgumentException("The Id of deleting task can't be less then zero.");
 
             taskRepository?.Delete(id);
-        }
+        } 
+        #endregion
 
         public IEnumerable<BllTask> GetAll() => taskRepository?.GetAll().Select(t => t.ToBllTask());
+
+        //ElasticSearch initializer
+
+        //public IEnumerable<BllTask> GetAll() 
+        //{
+        //    foreach (var item in taskRepository?.GetAll())
+        //        elasticRepository.Create(item);
+
+        //    return taskRepository?.GetAll().Select(t => t.ToBllTask());
+        //}
 
         public BllTask GetById(int id)
         {
@@ -48,18 +68,7 @@ namespace BLL.Concrete
 
         public IEnumerable<BllTask> GetTasksByDate(DateTime date)
         {
-            //if (date == null)
-            //    throw new ArgumentNullException(nameof(date));
-
             throw new NotImplementedException();
-        }
-
-        public void Update(BllTask entity)
-        {
-            if (entity == null)
-                throw new ArgumentNullException("The bll task entity is null.");
-
-            taskRepository?.Update(entity.ToDalTask());
         }
 
         public IEnumerable<BllTask> GetQueryResults(string query)

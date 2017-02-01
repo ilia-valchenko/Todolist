@@ -8,11 +8,11 @@ h1 {
 }
 
 #popup {
-    background-color: #b4b6ba;
+    background-color: #d1d1d1;
     width: 220px;
     height: 310px;
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 40%;
     left: 50%;
     border-radius: 10px;
     padding: 15px 20px 15px 20px;
@@ -43,4 +43,28 @@ h1 {
 
 #create-button {
     margin: 15px 0 0 0;
+}
+
+/* Align Submit & Cancel button */
+
+#popup div {
+    clear: both;
+    padding: 0 15px 0 15px;
+}
+
+#popup div input:first-child {
+    float: left;
+    width: 45%;
+}
+
+#popup div input:last-child {
+    float: right;
+    width: 45%;
+}
+
+/* Search form */
+
+#search-form input[type="text"] {
+    margin-bottom: 0;
+    margin-right: 5px;
 }
