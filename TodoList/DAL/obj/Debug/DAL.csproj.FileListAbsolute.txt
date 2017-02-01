@@ -46,3 +46,4 @@ D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\NHibernate.xml
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\obj\Debug\DAL.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\obj\Debug\DAL.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\DAL.dll.config

@@ -113,7 +113,6 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Web.Http.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Web.Http.WebHost.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\NHibernate.dll
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Iesi.Collections.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.Interfaces.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.pdb
@@ -138,9 +137,10 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Web.Http.WebHo
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\NHibernate.xml
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Iesi.Collections.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.csprojResolveAssemblyReference.cache
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.dll
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.xml

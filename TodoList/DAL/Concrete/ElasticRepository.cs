@@ -1,24 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using DAL.Interfaces.DTO;
-using NHibernate;
-using DAL.Helpers;
-using DAL.Mappers;
-using ORM.Models;
 using DAL.Interfaces.Repository.ModelRepository;
 using Nest;
-using Elasticsearch.Net;
-using Newtonsoft.Json;
 using System.Diagnostics;
 
 namespace DAL.Concrete
 {
     public class ElasticRepository : IElasticRepository
     {
-        public ElasticRepository()
+        public ElasticRepository(/*IElasticClient elasticClient*/)
         {
-            elasticClient = new ElasticLowLevelClient();
+            //this.elasticClient = elasticClient;
+            elasticClient = new ElasticClient();
         }
 
         #region CRUD
@@ -29,17 +23,7 @@ namespace DAL.Concrete
 
             try
             {
-                elasticClient.Index<DalTask>("taskmanager", "tasks", JsonConvert.SerializeObject(entity));
-            }
-            catch (JsonSerializationException serializationException)
-            {
-                // write it into a logfile
-                Debug.WriteLine($"Serialization Exception. Error message: {serializationException.Message}. StackTrace: {serializationException.StackTrace}");
-            }
-            catch (ElasticsearchClientException elasticClientException)
-            {
-                // write it into a logfile
-                Debug.WriteLine($"Elasticsearch Client Exception. Error message: {elasticClientException.Message}. StackTrace: {elasticClientException.StackTrace}");
+                elasticClient.Index(entity, t => t.Index("taskmanager").Type("tasks"));
             }
             catch (Exception exc)
             {
@@ -74,14 +58,12 @@ namespace DAL.Concrete
         {
             if (String.IsNullOrEmpty(query))
                 return null;
-
-            DalTask res = elasticClient.Search<DalTask>(new DalTask { Title = query }).Body;
-
+            
             // stub
             return null;
         }
         #endregion
 
-        private ElasticLowLevelClient elasticClient;
+        private IElasticClient elasticClient;
     }
 }

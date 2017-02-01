@@ -4,6 +4,7 @@ using DAL.Interfaces.Repository.ModelRepository;
 using DAL.Concrete;
 using BLL.Interfaces.Services.EntityService;
 using BLL.Concrete;
+//using Nest;
 
 namespace RESTService
 {
@@ -14,6 +15,7 @@ namespace RESTService
             UnityContainer container = new UnityContainer();
             container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ITaskService, TaskService>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IElasticClient, ElasticClient>(new HierarchicalLifetimeManager());
             container.RegisterType<IElasticRepository, ElasticRepository>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new Infrastructure.UnityResolver(container);
 

@@ -12,14 +12,7 @@ C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL.Interfaces\bin
 C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL.Interfaces\bin\Debug\Newtonsoft.Json.xml
 D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\BLL.Interfaces.dll
 D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\BLL.Interfaces.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\Elasticsearch.Net.dll
-D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\Nest.dll
 D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\Newtonsoft.Json.dll
-D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\Elasticsearch.Net.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\Elasticsearch.Net.xml
-D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\Nest.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\Nest.xml
 D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\bin\Debug\Newtonsoft.Json.xml
-D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\obj\Debug\BLL.Interfaces.csprojResolveAssemblyReference.cache
 D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\obj\Debug\BLL.Interfaces.dll
 D:\GitProjects\TodolistNhibernate\TodoList\BLL.Interfaces\obj\Debug\BLL.Interfaces.pdb
