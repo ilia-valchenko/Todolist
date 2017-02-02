@@ -18,8 +18,10 @@ namespace ConsoleApplication1
 
             ElasticRepository repository = new ElasticRepository();
 
-            foreach (var task in repository.GetQueryResults("world"))
-                Console.WriteLine($"Id: {task.Id}, Title: {task.Title}, Description: {task.Description}\n\n");
+            var res = repository.GetById(2);
+
+            //foreach (var task in repository.GetQueryResults("world"))
+            //    Console.WriteLine($"Id: {task.Id}, Title: {task.Title}, Description: {task.Description}\n\n");
 
             Console.WriteLine("Tap to continue...");
             Console.ReadKey(true);

@@ -19,7 +19,7 @@
             <h3>{{task.Title}}</h3>
             <p>{{task.Description}}</p>
             <small>Date: {{task.PublishDate | date: 'MM/dd/yyyy @ h:mma'}}</small>
-            <footer><small>Is completed: {{task.IsCompleted}}</small></footer>
+            <footer><small>Is completed: {{task.IsCompleted}} | <a href="#">Edit</a> | <a href="#" ng-click="deleteTask($index)">Delete</a></small></footer>
         </article>
     </div>
 

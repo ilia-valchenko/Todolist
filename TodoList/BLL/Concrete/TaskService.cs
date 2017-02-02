@@ -43,6 +43,7 @@ namespace BLL.Concrete
                 throw new ArgumentException("The Id of deleting task can't be less then zero.");
 
             taskRepository?.Delete(id);
+            elasticRepository?.Delete(id);
         }
         #endregion
 
@@ -63,7 +64,7 @@ namespace BLL.Concrete
             if (id < 0)
                 throw new ArgumentException("The Id of seeking task can't be less then zero.");
 
-             return taskRepository?.GetById(id).ToBllTask();
+            return elasticRepository?.GetById(id).ToBllTask();
         }
 
         public IEnumerable<BllTask> GetTasksByDate(DateTime date)

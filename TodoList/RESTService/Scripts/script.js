@@ -61,6 +61,25 @@
                 });
         };
 
+        $scope.deleteTask = function(index) {
+
+            console.log("Into delete task function.");
+            console.log("Index = " + index);
+            console.log($scope.tasks[index]);
+
+            $http.delete(
+                '/api/task',
+                {
+                    params: { id: $scope.tasks[index].Id }
+                }
+            ).then(function (response) {
+                $scope.tasks.splice(index, 1);
+            },
+                function () {
+                    console.log("Something went wrong. The was't deleted.");
+                });
+        };
+
     }]);
 
 })();

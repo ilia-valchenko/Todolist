@@ -11,7 +11,9 @@ namespace ORM.Helpers
         public static ISession OpenSession()
         {
             ISessionFactory factory = Fluently.Configure().Database(MsSqlConfiguration.MsSql2012.ConnectionString(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\GitProjects\TodolistNhibernate\TodoList\ORM\App_Data\Taskstorage.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent =ReadWrite;MultiSubnetFailover=False").ShowSql())
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Task>())
+                //.Mappings(m => m.FluentMappings.AddFromAssemblyOf<Task>())
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<TaskMap>())
+                //.Mappings(m => m.FluentMappings.Add<TaskMap>())
                 .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
                 .BuildSessionFactory();
 

@@ -18,6 +18,9 @@ namespace RESTService.Controllers
             return Json(taskService?.GetAll());
         }
 
+        [HttpGet]
+        public IHttpActionResult Details(int id) => Json(taskService?.GetById(id));
+
         [HttpPost]
         public IHttpActionResult AddNewTask(BllTask task)
         {
@@ -28,13 +31,28 @@ namespace RESTService.Controllers
             return Json(task);
         }
 
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            try
+            {
+                taskService?.Delete(id);
+            }
+            catch(Exception exc)
+            {
+                // change type of exception
+                // handle it 
+                // log it
+                return BadRequest();
+            }
+
+            return Ok();
+        } 
+
         [HttpGet]
         [ActionName("search")]
         public IHttpActionResult GetQueryResults(string query)
         {
-            //if (String.IsNullOrEmpty(query))
-            //    return null;
-
             return Json(taskService?.GetQueryResults(query));
         }
 

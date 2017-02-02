@@ -47,19 +47,15 @@ namespace DAL.Concrete
             if (id < 0)
                 throw new ArgumentException("The Id of a deleting element can't be less then zero.");
 
-            DalTask deletingTask = GetById(id);
-
-            if(deletingTask != null)
-            {
-                using (ISession session = NhibernateHelper.OpenSession())
+             using (ISession session = NhibernateHelper.OpenSession())
+             {
+                using (ITransaction transaction = session.BeginTransaction())
                 {
-                    using (ITransaction transaction = session.BeginTransaction())
-                    {
-                        session.Delete(deletingTask);
-                        transaction.Commit();
-                    }
+                    Task deletingTask = session.Load<Task>(id);
+                    session.Delete(deletingTask);
+                    transaction.Commit();
                 }
-            }
+             }
         }
 
         public IEnumerable<DalTask> GetAll()
