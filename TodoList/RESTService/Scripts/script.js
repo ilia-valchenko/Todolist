@@ -48,51 +48,13 @@
 
         $scope.getQueryResults = function () {
 
-            var data = {
-                query: {
-                    bool: {
-                        should: [
-                            { 
-                                match: { 
-                                    Title: {
-                                        query: $scope.query,
-                                        fuzziness: "AUTO",
-                                        operator:  "and"
-                                    }
-                                }
-                            },
-                            { 
-                                match: { 
-                                    Description: {
-                                        query: $scope.query,
-                                        fuzziness: "AUTO",
-                                        operator:  "and"
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                }
-            };
-
-            $http.post(
-                'http://localhost:9200/taskmanager/tasks/_search',
-                JSON.stringify(data),
+            $http.get(
+                '/api/task/search',
                 {
-                    // Avoid CORS
-                    headers: {
-                        'Access-Control-Allow-Origin': '*',
-                        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-                        'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
-                        'Content-Type': 'application/json'
-                    }
+                    params: { query: $scope.query }
                 }
             ).then(function (response) {
-                $scope.tasks = [];
-                var res = response.data.hits.hits;
-
-                for (var i = 0; i < res.length; i++)
-                    $scope.tasks.push(res[i]._source);
+                $scope.tasks = response.data;
             },
                 function () {
                     console.log("Something went wrong. Query finished unsuccessfully.");

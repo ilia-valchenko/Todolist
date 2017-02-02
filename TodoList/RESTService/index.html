@@ -10,12 +10,12 @@
     <h1>To-do list</h1>
 
     <form method="get" id="search-form" ng-submit="getQueryResults()">
-        <input type="text" ng-model="query">
+        <input type="text" ng-model="query" ng-change="getQueryResults()">
         <input type="submit" value="Search">
     </form>
 
     <div id="main">
-        <article ng-repeat="task in tasks track by $index">
+        <article ng-repeat="task in tasks track by $index" id="{{task.Id}}">
             <h3>{{task.Title}}</h3>
             <p>{{task.Description}}</p>
             <small>Date: {{task.PublishDate | date: 'MM/dd/yyyy @ h:mma'}}</small>

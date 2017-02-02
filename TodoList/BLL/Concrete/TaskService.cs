@@ -43,14 +43,14 @@ namespace BLL.Concrete
                 throw new ArgumentException("The Id of deleting task can't be less then zero.");
 
             taskRepository?.Delete(id);
-        } 
+        }
         #endregion
 
-        public IEnumerable<BllTask> GetAll() => taskRepository?.GetAll().Select(t => t.ToBllTask());
+        //public IEnumerable<BllTask> GetAll() => taskRepository?.GetAll().Select(t => t.ToBllTask());
 
-        //ElasticSearch initializer
+        public IEnumerable<BllTask> GetAll() => elasticRepository?.GetAll().Select(t => t.ToBllTask());
 
-        //public IEnumerable<BllTask> GetAll() 
+        //public IEnumerable<BllTask> GetAll()
         //{
         //    foreach (var item in taskRepository?.GetAll())
         //        elasticRepository.Create(item);
@@ -63,7 +63,7 @@ namespace BLL.Concrete
             if (id < 0)
                 throw new ArgumentException("The Id of seeking task can't be less then zero.");
 
-            return taskRepository?.GetById(id).ToBllTask();
+             return taskRepository?.GetById(id).ToBllTask();
         }
 
         public IEnumerable<BllTask> GetTasksByDate(DateTime date)
@@ -74,7 +74,7 @@ namespace BLL.Concrete
         public IEnumerable<BllTask> GetQueryResults(string query)
         {
             if (String.IsNullOrEmpty(query))
-                return null;
+                return elasticRepository?.GetAll().Select(t => t.ToBllTask());
 
             return elasticRepository?.GetQueryResults(query).Select(t => t.ToBllTask());
         }

@@ -29,10 +29,11 @@ namespace RESTService.Controllers
         }
 
         [HttpGet]
+        [ActionName("search")]
         public IHttpActionResult GetQueryResults(string query)
         {
-            if (String.IsNullOrEmpty(query))
-                return null;
+            //if (String.IsNullOrEmpty(query))
+            //    return null;
 
             return Json(taskService?.GetQueryResults(query));
         }

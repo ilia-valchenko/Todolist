@@ -26,8 +26,6 @@ C:\Users\iValc\documents\visual studio 2015\Projects\TodoList\BLL\bin\Debug\Newt
 C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\BLL\bin\Debug\App_Data\Taskstorage.mdf
 C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\BLL\bin\Debug\App_Data\Taskstorage_log.ldf
 C:\Users\iValc\Documents\Visual Studio 2015\Projects\TodoList\BLL\bin\Debug\hibernate.cfg.xml
-D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\App_Data\Taskstorage.mdf
-D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\App_Data\Taskstorage_log.ldf
 D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\BLL.dll.config
 D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\BLL.dll
 D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\BLL.pdb

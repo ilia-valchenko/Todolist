@@ -27,7 +27,6 @@ D:\GitProjects\TodolistNhibernate\TodoList\ConsoleApplication1\bin\Debug\FluentN
 D:\GitProjects\TodolistNhibernate\TodoList\ConsoleApplication1\bin\Debug\FluentNHibernate.xml
 D:\GitProjects\TodolistNhibernate\TodoList\ConsoleApplication1\bin\Debug\Iesi.Collections.xml
 D:\GitProjects\TodolistNhibernate\TodoList\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
-D:\GitProjects\TodolistNhibernate\TodoList\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.ConsoleApplication1.exe.config
 D:\GitProjects\TodolistNhibernate\TodoList\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 D:\GitProjects\TodolistNhibernate\TodoList\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\ConsoleApplication1\bin\Debug\App_Data\Taskstorage.mdf
