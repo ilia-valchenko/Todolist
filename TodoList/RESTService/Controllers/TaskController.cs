@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web.Http;
+﻿using System.Web.Http;
 using BLL.Interfaces.Entities;
 using BLL.Interfaces.Services.EntityService;
 
@@ -13,10 +12,7 @@ namespace RESTService.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult ShowTodoList()
-        {
-            return Json(taskService?.GetAll());
-        }
+        public IHttpActionResult ShowTodoList() => Json(taskService?.GetAll());
 
         [HttpGet]
         public IHttpActionResult Details(int id) => Json(taskService?.GetById(id));
@@ -24,55 +20,27 @@ namespace RESTService.Controllers
         [HttpPost]
         public IHttpActionResult AddNewTask(BllTask task)
         {
-            task.PublishDate = DateTime.Now;
-            task.IsCompleted = false;
-
             taskService?.Create(task);
-            return Json(task);
+            return Ok();
         }
 
         [HttpPut]
         public IHttpActionResult Update(BllTask task)
         {
-            try
-            {
-                taskService?.Update(task);
-            }
-            catch(Exception exc)
-            {
-                // change type of exception
-                // handle it 
-                // log it
-                return BadRequest();
-            }
-
+            taskService?.Update(task);
             return Ok();
         }
 
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            try
-            {
-                taskService?.Delete(id);
-            }
-            catch(Exception exc)
-            {
-                // change type of exception
-                // handle it 
-                // log it
-                return BadRequest();
-            }
-
+            taskService?.Delete(id);
             return Ok();
         } 
 
         [HttpGet]
         [ActionName("search")]
-        public IHttpActionResult GetQueryResults(string query)
-        {
-            return Json(taskService?.GetQueryResults(query));
-        }
+        public IHttpActionResult GetQueryResults(string query) => Json(taskService?.GetQueryResults(query));
 
         private ITaskService taskService;
     }

@@ -29,14 +29,17 @@
 
         $scope.submitNewTask = function () {
 
-            if ($scope.id) {
+            console.log("Into submitNewTask function. The id: " + $scope.id);
 
-                // Update
+            if (/*$scope.tasks[$scope.id].Id*/0) {
 
+                console.log("Update task");
+
+                // Update date on UI
                 $scope.tasks[$scope.id].Title = $scope.title;
                 $scope.tasks[$scope.id].Description = $scope.description;
 
-                var data = { "id": $scope.id, "title": $scope.title, "description": $scope.description, "publishDate": $scope.tasks[$scope.id].PublishDate };
+                var data = { "id": $scope.tasks[$scope.id].Id, "title": $scope.title, "description": $scope.description, "publishDate": $scope.tasks[$scope.id].PublishDate, "IsCompleted": $scope.tasks[$scope.id].IsCompleted };
 
                 $http.put(
                     '/api/task',
@@ -53,7 +56,7 @@
             }
             else {
 
-                // Create
+                console.log("Create new post.");
 
                 var data = { "title": $scope.title, "description": $scope.description };
 
@@ -111,12 +114,13 @@
         $scope.editTask = function (index) {
             $scope.title = $scope.tasks[index].Title;
             $scope.description = $scope.tasks[index].Description;
-            $scope.id = $scope.tasks[index].Id;
+            $scope.id = index;
 
             $scope.isVisiblePopup = true;
         };
 
         $scope.createTask = function () {
+            // Clear updating information date
             $scope.title = '';
             $scope.description = '';
             $scope.id = 0;

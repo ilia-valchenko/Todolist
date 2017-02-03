@@ -55,5 +55,3 @@ D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Iesi.Collections.xml
 D:\GitProjects\TodolistNhibernate\TodoList\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\GitProjects\TodolistNhibernate\TodoList\BLL\obj\Debug\BLL.dll
 D:\GitProjects\TodolistNhibernate\TodoList\BLL\obj\Debug\BLL.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\App_Data\Taskstorage.mdf
-D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\App_Data\Taskstorage_log.ldf

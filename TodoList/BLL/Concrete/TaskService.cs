@@ -23,6 +23,9 @@ namespace BLL.Concrete
             if (entity == null)
                 throw new ArgumentNullException("The bll task entity is null.");
 
+            entity.PublishDate = DateTime.Now;
+            entity.IsCompleted = false;
+
             DalTask task = entity.ToDalTask();
 
             taskRepository?.Create(task);
@@ -47,8 +50,6 @@ namespace BLL.Concrete
             elasticRepository?.Delete(id);
         }
         #endregion
-
-        //public IEnumerable<BllTask> GetAll() => taskRepository?.GetAll().Select(t => t.ToBllTask());
 
         public IEnumerable<BllTask> GetAll() => elasticRepository?.GetAll().Select(t => t.ToBllTask());
 
@@ -78,7 +79,7 @@ namespace BLL.Concrete
             if (String.IsNullOrEmpty(query))
                 return elasticRepository?.GetAll().Select(t => t.ToBllTask());
 
-            return elasticRepository?.GetQueryResults(query).Select(t => t.ToBllTask());
+            return elasticRepository?.GetQueryResults(query.ToLowerInvariant()).Select(t => t.ToBllTask());
         }
 
         private ITaskRepository taskRepository;
