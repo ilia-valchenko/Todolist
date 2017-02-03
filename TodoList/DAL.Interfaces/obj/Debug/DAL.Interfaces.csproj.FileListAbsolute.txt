@@ -24,4 +24,3 @@ D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\bin\Debug\Nest.xml
 D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\bin\Debug\Newtonsoft.Json.xml
 D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\DAL.Interfaces\obj\Debug\DAL.Interfaces.csprojResolveAssemblyReference.cache

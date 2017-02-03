@@ -23,4 +23,3 @@ D:\GitProjects\TodolistNhibernate\TodoList\ORM\bin\Debug\Iesi.Collections.xml
 D:\GitProjects\TodolistNhibernate\TodoList\ORM\bin\Debug\NHibernate.xml
 D:\GitProjects\TodolistNhibernate\TodoList\ORM\obj\Debug\ORM.dll
 D:\GitProjects\TodolistNhibernate\TodoList\ORM\obj\Debug\ORM.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\ORM\obj\Debug\ORM.csprojResolveAssemblyReference.cache

@@ -5,6 +5,7 @@
 
         $scope.tasks = [];
         $scope.isVisiblePopup = false;
+        var isExist = false;
         
         function Init() {
             Tasks.getAll().then(function (response) {
@@ -29,12 +30,7 @@
 
         $scope.submitNewTask = function () {
 
-            console.log("Into submitNewTask function. The id: " + $scope.id);
-
-            if (/*$scope.tasks[$scope.id].Id*/0) {
-
-                console.log("Update task");
-
+            if (isExist) {
                 // Update date on UI
                 $scope.tasks[$scope.id].Title = $scope.title;
                 $scope.tasks[$scope.id].Description = $scope.description;
@@ -56,8 +52,6 @@
             }
             else {
 
-                console.log("Create new post.");
-
                 var data = { "title": $scope.title, "description": $scope.description };
 
                 $http.post(
@@ -67,7 +61,15 @@
                         headers: { 'Content-Type': 'application/json' }
                     }
                 ).then(function (response) {
-                    $scope.tasks.push(response.data);
+                    // stub
+                    // change returning types of service
+                    var newtask = $scope.tasks[1];
+                    newtask.Title = $scope.title;
+                    newtask.Description = $scope.description;
+
+                    $scope.tasks.push(newtask);
+
+                    //$scope.tasks.push(response.data);
                 },
                     function () {
                         console.log("Something went wrong. New task wasn't added.");
@@ -115,6 +117,7 @@
             $scope.title = $scope.tasks[index].Title;
             $scope.description = $scope.tasks[index].Description;
             $scope.id = index;
+            isExist = true;
 
             $scope.isVisiblePopup = true;
         };
@@ -124,6 +127,7 @@
             $scope.title = '';
             $scope.description = '';
             $scope.id = 0;
+            isExist = false;
 
             $scope.isVisiblePopup = true;
         };
