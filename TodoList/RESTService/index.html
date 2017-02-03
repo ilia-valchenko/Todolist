@@ -19,13 +19,15 @@
             <h3>{{task.Title}}</h3>
             <p>{{task.Description}}</p>
             <small>Date: {{task.PublishDate | date: 'MM/dd/yyyy @ h:mma'}}</small>
-            <footer><small>Is completed: {{task.IsCompleted}} | <a href="#">Edit</a> | <a href="#" ng-click="deleteTask($index)">Delete</a></small></footer>
+            <footer><small>Is completed: {{task.IsCompleted}} | <a href="#" ng-click="editTask($index)">Edit</a> | <a href="#" ng-click="deleteTask($index)">Delete</a></small></footer>
         </article>
     </div>
 
-    <input type="button" id="create-button" class="btn btn-info" ng-click="showPopup()" value="Create new item" />
+    <input type="button" id="create-button" class="btn btn-info" ng-click="createTask()" value="Create new item" />
 
     <form method="post" id="popup" ng-show="isVisiblePopup" ng-submit="submitNewTask()">
+        <input type="hidden" value="0" ng-model="id">
+
         <label for="title">Title:</label>
         <input type="text" ng-model="title" />
 
@@ -33,7 +35,7 @@
         <textarea ng-model="description"></textarea>
 
         <div>
-            <input type="submit" class="btn" value="Submit" />
+            <input type="submit" class="btn" value="Submit"/>
             <input type="button" class="btn" value="Close" ng-click="hidePopup()" />
         </div>
     </form>

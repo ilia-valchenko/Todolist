@@ -36,7 +36,9 @@ namespace DAL.Concrete
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    session.Update(entity);
+                    var updatingTask = entity.ToOrmTask();
+
+                    session.Update(updatingTask);
                     transaction.Commit();
                 }
             }

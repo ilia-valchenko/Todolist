@@ -62,7 +62,7 @@ namespace DAL.Concrete
 
         public void Update(DalTask entity)
         {
-            throw new NotImplementedException();
+            elasticClient?.Update<DalTask>(entity.Id, u => u.Doc(entity));
         }
 
         public void Delete(int id)

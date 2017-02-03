@@ -35,6 +35,7 @@ namespace BLL.Concrete
                 throw new ArgumentNullException("The bll task entity is null.");
 
             taskRepository?.Update(entity.ToDalTask());
+            elasticRepository?.Update(entity.ToDalTask());
         }
 
         public void Delete(int id)

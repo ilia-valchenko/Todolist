@@ -31,6 +31,24 @@ namespace RESTService.Controllers
             return Json(task);
         }
 
+        [HttpPut]
+        public IHttpActionResult Update(BllTask task)
+        {
+            try
+            {
+                taskService?.Update(task);
+            }
+            catch(Exception exc)
+            {
+                // change type of exception
+                // handle it 
+                // log it
+                return BadRequest();
+            }
+
+            return Ok();
+        }
+
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
