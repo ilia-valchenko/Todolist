@@ -9,12 +9,6 @@
         
         function Init() {
             Tasks.getAll().then(function (response) {
-
-
-                 // bug
-                console.log(response);
-
-
                 var objectsFromJson = response.data;
 
                 for (var i = 0; i < objectsFromJson.length; i++)
@@ -36,6 +30,8 @@
 
         $scope.submitNewTask = function () {
 
+            console.log("Into submit new task function. isExist: " + isExist);
+
             if (isExist) {
                 // Update date on UI
                 $scope.tasks[$scope.id].Title = $scope.title;
@@ -51,9 +47,10 @@
                     }
                 ).then(function (response) {
                     $scope.tasks.push(response.data);
+                    console.log("The task with id: " + $scope.tasks[$scope.id].Id + " was successfully updated.");
                 },
                     function () {
-                        console.log("Something went wrong. The new task with id: " + $scope.id + " wasn't added.");
+                        console.log("Something went wrong. The new task with id: " + $scope.tasks[$scope.id].Id + " wasn't updated.");
                     });
             }
             else {
@@ -69,6 +66,7 @@
                 ).then(function (response) {
                     // stub
                     // change returning types of service
+
                     var newtask = $scope.tasks[1];
                     newtask.Title = $scope.title;
                     newtask.Description = $scope.description;
@@ -78,7 +76,7 @@
                     //$scope.tasks.push(response.data);
                 },
                     function () {
-                        console.log("Something went wrong. New task wasn't added.");
+                        console.log("Something went wrong. A new task wasn't added.");
                     });
             }
 
@@ -120,6 +118,9 @@
         };
 
         $scope.editTask = function (index) {
+
+            console.log("Edit task function.");
+
             $scope.title = $scope.tasks[index].Title;
             $scope.description = $scope.tasks[index].Description;
             $scope.id = index;

@@ -171,6 +171,8 @@
     <Compile Include="Infrastructure\UnityResolver.cs" />
     <Compile Include="Mappers\BootstrapperAutoMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CreateTaskViewModel.cs" />
+    <Compile Include="ViewModels\EditTaskViewModel.cs" />
     <Compile Include="ViewModels\TaskViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

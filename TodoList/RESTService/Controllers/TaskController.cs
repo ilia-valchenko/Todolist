@@ -37,21 +37,33 @@ namespace RESTService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult AddNewTask(BllTask task)
+        public IHttpActionResult AddNewTask(CreateTaskViewModel createTaskViewModel)
         {
-            taskService.Create(task);
-            // check for null value
-            // bad request
-            return Ok();
+            if(ModelState.IsValid)
+            {
+                BllTask task = Mapper.Map<BllTask>(createTaskViewModel);
+                taskService.Create(task);
+                return Ok();
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
         }
 
         [HttpPut]
-        public IHttpActionResult Update(BllTask task)
+        public IHttpActionResult Update(EditTaskViewModel editTaskViewModel)
         {
-            taskService.Update(task);
-            // check for null value
-            // bad request
-            return Ok();
+            if(ModelState.IsValid)
+            {
+                BllTask task = Mapper.Map<BllTask>(editTaskViewModel);
+                taskService.Update(task);
+                return Ok();
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
         }
 
         [HttpDelete]
