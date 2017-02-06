@@ -3,7 +3,6 @@ using Bootstrap.AutoMapper;
 using BLL.Models;
 using RESTService.ViewModels;
 using DAL.Entities;
-using System.Collections.Generic;
 
 namespace RESTService.Mappers
 {
@@ -15,8 +14,6 @@ namespace RESTService.Mappers
             mapper.CreateMap<TaskViewModel, BllTask>();
             mapper.CreateMap<DalTask, BllTask>();
             mapper.CreateMap<BllTask, DalTask>();
-
-            // feature
             mapper.CreateMap<CreateTaskViewModel, BllTask>();
             mapper.CreateMap<EditTaskViewModel, BllTask>();
         }

@@ -217,3 +217,6 @@ D:\GitProjects\todolist\TodoList\RESTService\bin\Iesi.Collections.xml
 D:\GitProjects\todolist\TodoList\RESTService\obj\Debug\RESTService.csprojResolveAssemblyReference.cache
 D:\GitProjects\todolist\TodoList\RESTService\obj\Debug\RESTService.dll
 D:\GitProjects\todolist\TodoList\RESTService\obj\Debug\RESTService.pdb
+D:\GitProjects\todolist\TodoList\RESTService\bin\NLog.config
+D:\GitProjects\todolist\TodoList\RESTService\bin\Logger.dll
+D:\GitProjects\todolist\TodoList\RESTService\bin\Logger.pdb
