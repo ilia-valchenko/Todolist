@@ -1,18 +1,16 @@
 ﻿using System.Web.Http;
-using BLL.Services.Concrete;
 using BLL.Services.Interfaces;
-using System.Linq;
 using System.Collections.Generic;
 using RESTService.ViewModels;
 using AutoMapper;
 using BLL.Models;
-using AutoMapper.Mappers;
-using System.Web.Http.Results;
 
 namespace RESTService.Controllers
 {
     public class TaskController : ApiController
     {
+        private readonly ITaskService taskService;
+
         public TaskController(ITaskService taskService)
         {
             this.taskService = taskService;
@@ -22,7 +20,7 @@ namespace RESTService.Controllers
         public IHttpActionResult ShowTodoList()
         {
             IEnumerable<BllTask> bllTasks = taskService.GetAll();
-            IEnumerable<TaskViewModel> viewModelTasks = bllTasks.Select(t => Mapper.Map<TaskViewModel>(t));
+            IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(bllTasks);
             var jsonTasks = Json(viewModelTasks);
             return jsonTasks;
         }
@@ -70,8 +68,6 @@ namespace RESTService.Controllers
         public IHttpActionResult Delete(int id)
         {
             taskService.Delete(id);
-            // check for
-            // bad request
             return Ok();
         }
 
@@ -79,9 +75,10 @@ namespace RESTService.Controllers
         [ActionName("search")]
         public IHttpActionResult GetQueryResults(string query)
         {
-            return Json(taskService?.GetQueryResults(query));
-        }
-
-        private ITaskService taskService;
+            IEnumerable<BllTask> bllTasks = taskService.GetQueryResults(query);
+            IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(bllTasks);
+            var jsonQueryResults = Json(viewModelTasks);
+            return jsonQueryResults;
+        }  
     }
 }

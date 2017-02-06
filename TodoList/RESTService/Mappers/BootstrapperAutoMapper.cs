@@ -18,6 +18,7 @@ namespace RESTService.Mappers
 
             // feature
             mapper.CreateMap<CreateTaskViewModel, BllTask>();
+            mapper.CreateMap<EditTaskViewModel, BllTask>();
         }
     }
 }

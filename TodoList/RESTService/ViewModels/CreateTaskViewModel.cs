@@ -4,7 +4,7 @@ namespace RESTService.ViewModels
 {
     public class CreateTaskViewModel
     {
-        [Required(ErrorMessage = "The field title can't be empty!")]
+        [Required(ErrorMessage = "The title can't be empty!")]
         public string Title { get; set; }
         public string Description { get; set; }
     }
