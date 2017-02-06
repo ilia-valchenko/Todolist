@@ -7,6 +7,7 @@ using ORM.Helpers;
 using DAL.Mappers;
 using ORM.Models;
 using DAL.Interfaces.Repository.ModelRepository;
+using NHibernate.Linq;
 
 namespace DAL.Concrete
 {
@@ -64,6 +65,8 @@ namespace DAL.Concrete
         {
             using (ISession session = NhibernateHelper.OpenSession())
             {
+                // session closed
+                //return session.Query<Task>().Select(t => t.ToDalTaks());
                 return session.CreateCriteria<Task>().List<Task>().Select(t => t.ToDalTaks());
             }
         }

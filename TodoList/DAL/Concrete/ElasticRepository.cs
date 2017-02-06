@@ -11,13 +11,14 @@ namespace DAL.Concrete
     {
         public ElasticRepository(/*IElasticClient elasticClient*/)
         {
-            //this.elasticClient = elasticClient;
+            /*this.elasticClient = elasticClient;*/
 
             const string indexName = "taskmanager";
-            ConnectionSettings settings = new ConnectionSettings(new Uri("http://localhost:9200")).DefaultIndex("taskmanager").DefaultTypeNameInferrer(t => "tasks");
+            ConnectionSettings settings = new ConnectionSettings(new Uri("http://localhost:9200")).DefaultIndex("taskmanager").DefaultTypeNameInferrer(t => "task");
             elasticClient = new ElasticClient(settings);
 
             IndexSettings indexSettings = new IndexSettings();
+
 
             CustomAnalyzer customAnalyzer = new CustomAnalyzer();
             customAnalyzer.CharFilter = new List<string>();

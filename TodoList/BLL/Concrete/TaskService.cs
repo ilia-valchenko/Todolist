@@ -22,7 +22,7 @@ namespace BLL.Concrete
         {
             if (entity == null)
                 throw new ArgumentNullException("The bll task entity is null.");
-
+            
             entity.PublishDate = DateTime.Now;
             entity.IsCompleted = false;
 
@@ -82,7 +82,7 @@ namespace BLL.Concrete
             return elasticRepository?.GetQueryResults(query.ToLowerInvariant()).Select(t => t.ToBllTask());
         }
 
-        private ITaskRepository taskRepository;
+        private readonly ITaskRepository taskRepository;
         private IElasticRepository elasticRepository;
     }
 }

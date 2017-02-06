@@ -1,10 +1,8 @@
 ﻿using System.Web.Http;
 using Microsoft.Practices.Unity;
-using DAL.Interfaces.Repository.ModelRepository;
-using DAL.Concrete;
-using BLL.Interfaces.Services.EntityService;
-using BLL.Concrete;
-//using Nest;
+using Bootstrap.Unity;
+using Bootstrap;
+using RESTService.Infrastructure;
 
 namespace RESTService
 {
@@ -12,12 +10,9 @@ namespace RESTService
     {
         public static void Register(HttpConfiguration config)
         {
-            UnityContainer container = new UnityContainer();
-            container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<ITaskService, TaskService>(new HierarchicalLifetimeManager());
-            //container.RegisterType<IElasticClient, ElasticClient>(new HierarchicalLifetimeManager());
-            container.RegisterType<IElasticRepository, ElasticRepository>(new HierarchicalLifetimeManager());
-            config.DependencyResolver = new Infrastructure.UnityResolver(container);
+            Bootstrapper.With.Unity().Start();
+            IUnityContainer container = (IUnityContainer)Bootstrapper.Container;
+            config.DependencyResolver = new UnityResolver(container);
 
             config.MapHttpAttributeRoutes();
 

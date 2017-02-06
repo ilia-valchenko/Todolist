@@ -3,15 +3,7 @@ using Nest;
 
 namespace DAL.Interfaces.DTO
 {
-    [ElasticsearchType(IdProperty = "Id", Name = "tasks")]
-//    [ElasticType(
-//    Name = "elasticsearchprojects2",
-//    DateDetection = true,
-//    NumericDetection = true,
-//    SearchAnalyzer = "standard",
-//    IndexAnalyzer = "standard",
-//    DynamicDateFormats = new[] { "dateOptionalTime", "yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z" }
-//)]
+    [ElasticsearchType(IdProperty = "Id", Name = "task")]
     public class DalTask : IEntity
     {
         [Number(Name = "Id")]

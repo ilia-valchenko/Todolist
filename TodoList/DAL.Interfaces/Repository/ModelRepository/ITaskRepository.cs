@@ -6,6 +6,6 @@ namespace DAL.Interfaces.Repository.ModelRepository
 {
     public interface ITaskRepository : IRepository<DalTask>
     {
-        IEnumerable<DalTask> GetTasksByDate(DateTime date);
+        //
     }
 }

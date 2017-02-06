@@ -105,7 +105,6 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.CodeDom.Pro
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.ServiceLocation.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.Configuration.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.dll
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Newtonsoft.Json.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\ORM.dll
@@ -132,7 +131,6 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.S
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.ServiceLocation.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.Configuration.xml
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Newtonsoft.Json.xml
@@ -146,3 +144,5 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Iesi.Collections.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.csprojResolveAssemblyReference.cache
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.pdb
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Bootstrapper.dll
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Bootstrapper.UnityExtension.dll

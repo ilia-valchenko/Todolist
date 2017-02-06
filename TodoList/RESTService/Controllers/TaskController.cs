@@ -12,15 +12,23 @@ namespace RESTService.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult ShowTodoList() => Json(taskService?.GetAll());
+        public IHttpActionResult ShowTodoList()
+        {
+            return Json(taskService?.GetAll());
+        }
 
         [HttpGet]
-        public IHttpActionResult Details(int id) => Json(taskService?.GetById(id));
+        public IHttpActionResult Details(int id)
+        {
+            return Json(taskService?.GetById(id));
+        }
 
         [HttpPost]
         public IHttpActionResult AddNewTask(BllTask task)
         {
             taskService?.Create(task);
+            // check for null value
+            // bad request
             return Ok();
         }
 
@@ -28,6 +36,8 @@ namespace RESTService.Controllers
         public IHttpActionResult Update(BllTask task)
         {
             taskService?.Update(task);
+            // check for null value
+            // bad request
             return Ok();
         }
 
@@ -35,12 +45,17 @@ namespace RESTService.Controllers
         public IHttpActionResult Delete(int id)
         {
             taskService?.Delete(id);
+            // check for
+            // bad request
             return Ok();
-        } 
+        }
 
         [HttpGet]
         [ActionName("search")]
-        public IHttpActionResult GetQueryResults(string query) => Json(taskService?.GetQueryResults(query));
+        public IHttpActionResult GetQueryResults(string query)
+        {
+            return Json(taskService?.GetQueryResults(query));
+        }
 
         private ITaskService taskService;
     }
