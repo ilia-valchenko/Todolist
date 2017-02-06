@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using DAL.Entities;
 using DAL.Repositories.Interfaces;
 using Nest;
-using System.Diagnostics;
 using Elasticsearch.Net;
 
 namespace DAL.Repositories.Concrete
 {
     public class ElasticRepository : IElasticRepository
     {
+        private readonly IElasticClient elasticClient;
+
         public ElasticRepository(/*IElasticClient elasticClient*/)
         {
-            /*this.elasticClient = elasticClient;*/
+            //this.elasticClient = elasticClient;
 
             const string indexName = "taskmanager";
             ConnectionSettings settings = new ConnectionSettings(new Uri("http://localhost:9200")).DefaultIndex("taskmanager").DefaultTypeNameInferrer(t => "task");
+
             elasticClient = new ElasticClient(settings);
 
             IndexSettings indexSettings = new IndexSettings();
@@ -130,26 +132,42 @@ namespace DAL.Repositories.Concrete
 
         public IEnumerable<DalTask> GetQueryResults(string query)
         {
-            return elasticClient.Search<DalTask>(s => s
-                .Query(q => q
-                    .Bool(b => b
-                        .Should(sh => sh
-                            .Wildcard(w => w
-                                .Field(f => f.Title)
-                                .Value($"*{query}*")
-                            ),
-                            shd => shd
-                                .Match(m => m
+            ISearchResponse<DalTask> searchResponse;
+
+            try
+            {
+                searchResponse =
+                elasticClient.Search<DalTask>(s => s
+                    .Query(q => q
+                        .Bool(b => b
+                            .Should(sh => sh
+                                .Wildcard(w => w
                                     .Field(f => f.Title)
-                                    .Query(query)
-                                )                            
+                                    .Value($"*{query}*")
+                                ),
+                                shd => shd
+                                    .Match(m => m
+                                        .Field(f => f.Title)
+                                        .Query(query)
+                                    )
+                            )
                         )
                     )
-                )
-            ).Documents;
+                );
+            }
+            catch(ElasticsearchClientException clientException)
+            {
+                // ILogger
+                throw;
+            }
+            catch(Exception exception)
+            {
+                // ILogger
+                throw;
+            }
+
+            return searchResponse.Documents;
         }
         #endregion
-
-        private IElasticClient elasticClient;
     }
 }

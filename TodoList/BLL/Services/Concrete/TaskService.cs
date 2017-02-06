@@ -22,14 +22,8 @@ namespace BLL.Services.Concrete
 
         #region CRUD
         public void Create(BllTask createdBllTask)
-        {
-            if (createdBllTask == null)
-            {
-                throw new ArgumentNullException("The bll task entity is null.");
-            }
-                
+        {               
             createdBllTask.PublishDate = DateTime.Now;
-            createdBllTask.IsCompleted = false;
 
             DalTask createdDalTask;
 
@@ -50,11 +44,6 @@ namespace BLL.Services.Concrete
 
         public void Update(BllTask updatedBllTask)
         {
-            if (updatedBllTask == null)
-            {
-                throw new ArgumentNullException("The bll task entity is null. You cannot update this entity.");
-            }
-
             DalTask updatedDalTask;
                 
             try
