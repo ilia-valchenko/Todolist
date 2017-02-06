@@ -44,8 +44,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Bootstrapper, Version=2.0.3.13, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bootstrapper.2.0.3.13\lib\Net40\Bootstrapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bootstrapper.AutoMapper, Version=2.0.3.14, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bootstrapper.AutoMapper.2.0.3.14\lib\Net40\Bootstrapper.AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Bootstrapper.UnityExtension, Version=2.0.3.13, Culture=neutral, processorArchitecture=MSIL">
@@ -155,8 +167,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\BootstrapperRegister.cs" />
+    <Compile Include="Infrastructure\BootstrapperTypeRegister.cs" />
     <Compile Include="Infrastructure\UnityResolver.cs" />
+    <Compile Include="Mappers\BootstrapperAutoMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\TaskViewModel.cs" />
   </ItemGroup>
@@ -173,32 +186,18 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL.Interfaces\BLL.Interfaces.csproj">
-      <Project>{c0944217-8f5a-42c4-aec9-6bf4be8d2248}</Project>
-      <Name>BLL.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{f4c740ca-20bd-4884-8266-2707a74f9597}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL.Interfaces\DAL.Interfaces.csproj">
-      <Project>{a5f9b29e-01dc-4185-814f-981d66a54308}</Project>
-      <Name>DAL.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{0c32ddf9-1509-4fc8-8e72-d69dde26acab}</Project>
       <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ORM\ORM.csproj">
-      <Project>{04eb24d4-c392-4599-b67d-c548c4da9f7f}</Project>
-      <Name>ORM</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -233,6 +232,7 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

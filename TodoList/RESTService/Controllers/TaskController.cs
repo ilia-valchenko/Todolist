@@ -1,6 +1,13 @@
 ﻿using System.Web.Http;
-using BLL.Interfaces.Entities;
-using BLL.Interfaces.Services.EntityService;
+using BLL.Services.Concrete;
+using BLL.Services.Interfaces;
+using System.Linq;
+using System.Collections.Generic;
+using RESTService.ViewModels;
+using AutoMapper;
+using BLL.Models;
+using AutoMapper.Mappers;
+using System.Web.Http.Results;
 
 namespace RESTService.Controllers
 {
@@ -14,19 +21,25 @@ namespace RESTService.Controllers
         [HttpGet]
         public IHttpActionResult ShowTodoList()
         {
-            return Json(taskService?.GetAll());
+            IEnumerable<BllTask> bllTasks = taskService.GetAll();
+            IEnumerable<TaskViewModel> viewModelTasks = bllTasks.Select(t => Mapper.Map<TaskViewModel>(t));
+            var jsonTasks = Json(viewModelTasks);
+            return jsonTasks;
         }
 
         [HttpGet]
         public IHttpActionResult Details(int id)
         {
-            return Json(taskService?.GetById(id));
+            BllTask detailedBllTask = taskService.GetById(id);
+            TaskViewModel detailedTaskViewModel = Mapper.Map<TaskViewModel>(detailedBllTask);
+            var detailedJsonTask = Json(detailedTaskViewModel);
+            return detailedJsonTask;
         }
 
         [HttpPost]
         public IHttpActionResult AddNewTask(BllTask task)
         {
-            taskService?.Create(task);
+            taskService.Create(task);
             // check for null value
             // bad request
             return Ok();
@@ -35,7 +48,7 @@ namespace RESTService.Controllers
         [HttpPut]
         public IHttpActionResult Update(BllTask task)
         {
-            taskService?.Update(task);
+            taskService.Update(task);
             // check for null value
             // bad request
             return Ok();
@@ -44,7 +57,7 @@ namespace RESTService.Controllers
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            taskService?.Delete(id);
+            taskService.Delete(id);
             // check for
             // bad request
             return Ok();

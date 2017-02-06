@@ -27,16 +27,12 @@ D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\App_Data\Taskstorage_lo
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\DAL.dll.config
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\DAL.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\DAL.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\DAL.Interfaces.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\Elasticsearch.Net.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\Iesi.Collections.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\Nest.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\Newtonsoft.Json.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\NHibernate.dll
-D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\ORM.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\FluentNHibernate.dll
-D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\DAL.Interfaces.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\ORM.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\Elasticsearch.Net.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\Elasticsearch.Net.xml
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\Iesi.Collections.xml
@@ -46,6 +42,5 @@ D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\Newtonsoft.Json.xml
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\NHibernate.xml
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\FluentNHibernate.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\FluentNHibernate.xml
-D:\GitProjects\TodolistNhibernate\TodoList\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\obj\Debug\DAL.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\obj\Debug\DAL.pdb

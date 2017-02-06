@@ -10,7 +10,6 @@ namespace RESTService
     {
         public static void Register(HttpConfiguration config)
         {
-            Bootstrapper.With.Unity().Start();
             IUnityContainer container = (IUnityContainer)Bootstrapper.Container;
             config.DependencyResolver = new UnityResolver(container);
 

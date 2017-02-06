@@ -90,9 +90,7 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\RESTService.dll.confi
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\RESTService.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\RESTService.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.dll
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.Interfaces.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\DAL.dll
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\DAL.Interfaces.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.AI.Agent.Intercept.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.AI.DependencyCollector.dll
@@ -107,18 +105,14 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.U
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.Practices.Unity.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Nest.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Newtonsoft.Json.dll
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\ORM.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Net.Http.Formatting.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Web.Http.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\System.Web.Http.WebHost.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\NHibernate.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\FluentNHibernate.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Iesi.Collections.dll
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.Interfaces.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\BLL.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\DAL.Interfaces.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\DAL.pdb
-D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\ORM.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Elasticsearch.Net.xml
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Microsoft.AI.DependencyCollector.xml
@@ -146,3 +140,7 @@ D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\obj\Debug\RESTService.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Bootstrapper.dll
 D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Bootstrapper.UnityExtension.dll
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\AutoMapper.dll
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\Bootstrapper.AutoMapper.dll
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\AutoMapper.xml
+D:\GitProjects\TodolistNhibernate\TodoList\RESTService\bin\AutoMapper.Net4.dll

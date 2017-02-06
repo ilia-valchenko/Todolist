@@ -9,6 +9,12 @@
         
         function Init() {
             Tasks.getAll().then(function (response) {
+
+
+                 // bug
+                console.log(response);
+
+
                 var objectsFromJson = response.data;
 
                 for (var i = 0; i < objectsFromJson.length; i++)
