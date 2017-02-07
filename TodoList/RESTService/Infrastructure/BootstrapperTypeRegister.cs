@@ -8,6 +8,7 @@ using BLL.Services.Concrete;
 using DAL.Repositories.Concrete;
 using Nest;
 using Elasticsearch.Net;
+using Logger;
 
 namespace RESTService.Infrastructure
 {
@@ -18,7 +19,6 @@ namespace RESTService.Infrastructure
             container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ITaskService, TaskService>(new ContainerControlledLifetimeManager());
             container.RegisterType<IElasticRepository, ElasticRepository>(new HierarchicalLifetimeManager());
-
             //container.RegisterType<IElasticClient, ElasticClient>(new HierarchicalLifetimeManager());
             //container.RegisterType<IConnectionSettingsValues, ConnectionSettings>(new InjectionConstructor(new Uri("http://localhost:9200")));
         }

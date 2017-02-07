@@ -168,8 +168,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\BootstrapperTypeRegister.cs" />
-    <Compile Include="Infrastructure\ErrorLogService.cs" />
-    <Compile Include="Infrastructure\LogExceptionFilterAttribute.cs" />
+    <Compile Include="Infrastructure\HandleExceptionsAttribute.cs" />
     <Compile Include="Infrastructure\UnityResolver.cs" />
     <Compile Include="Mappers\BootstrapperAutoMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

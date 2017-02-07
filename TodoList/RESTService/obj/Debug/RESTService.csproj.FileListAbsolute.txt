@@ -220,3 +220,5 @@ D:\GitProjects\todolist\TodoList\RESTService\obj\Debug\RESTService.pdb
 D:\GitProjects\todolist\TodoList\RESTService\bin\NLog.config
 D:\GitProjects\todolist\TodoList\RESTService\bin\Logger.dll
 D:\GitProjects\todolist\TodoList\RESTService\bin\Logger.pdb
+D:\GitProjects\todolist\TodoList\RESTService\bin\NLog.dll
+D:\GitProjects\todolist\TodoList\RESTService\bin\NLog.xml

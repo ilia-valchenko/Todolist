@@ -13,40 +13,40 @@ namespace DAL.Concrete
     {
         public void Create(DalTask task)
         {
-            try
-            {
+            //try
+            //{
                 using (ISession session = NhibernateHelper.OpenSession())
                 {
-                    try
-                    {
+                    //try
+                    //{
                         using (ITransaction transaction = session.BeginTransaction())
                         {
                             session.Save(task);
                             transaction.Commit();
                         }
-                    }
-                    catch(TransactionException transactionException)
-                    {
-                        // ILogger
-                        throw;
-                    }
+                    //}
+                    //catch(TransactionException transactionException)
+                    //{
+                    //    // ILogger
+                    //    throw;
+                    //}
                 }
-            }
-            catch(TransactionException transactionException)
-            {
-                // ILogger
-                throw;
-            }
-            catch(SessionException sessionException)
-            {
-                // ILogger
-                throw;
-            }
-            catch(Exception exception)
-            {
-                // ILogger
-                throw;
-            }
+            //}
+            //catch(TransactionException transactionException)
+            //{
+            //    // ILogger
+            //    throw;
+            //}
+            //catch(SessionException sessionException)
+            //{
+            //    // ILogger
+            //    throw;
+            //}
+            //catch(Exception exception)
+            //{
+            //    // ILogger
+            //    throw;
+            //}
         }
 
         public void Update(DalTask task)
@@ -158,6 +158,7 @@ namespace DAL.Concrete
         }
     }
 }
+
 
 
 
