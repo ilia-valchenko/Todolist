@@ -5,7 +5,7 @@ namespace BLL.Services.Interfaces
 {
     public interface ITaskService
     {
-        void Create(BllTask task);
+        BllTask Create(BllTask task);
         void Update(BllTask task);
         void Delete(int id);
         BllTask GetById(int id);

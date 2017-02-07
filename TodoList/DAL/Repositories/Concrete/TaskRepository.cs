@@ -15,7 +15,7 @@ namespace DAL.Concrete
             this.sessionFactory = sessionFactory;
         }
 
-        public void Create(DalTask task)
+        public DalTask Create(DalTask task)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
@@ -23,6 +23,7 @@ namespace DAL.Concrete
                 {
                     session.Save(task);
                     transaction.Commit();
+                    return task;
                 }
             }
         }

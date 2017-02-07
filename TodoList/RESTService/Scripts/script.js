@@ -53,16 +53,8 @@
                         headers: { 'Content-Type': 'application/json' }
                     }
                 ).then(function (response) {
-                    // response is empty data with 200 status code
-                    
-                    // stub
-                    // change returning types of service
-
-                    //var newtask = $scope.tasks[1];
-                    //newtask.Title = $scope.title;
-                    //newtask.Description = $scope.description;
-
-                    //$scope.tasks.push(newtask);
+                    console.log("Response from create task function:");
+                    console.log(response);
                 },
                     function (response) {
                         // error

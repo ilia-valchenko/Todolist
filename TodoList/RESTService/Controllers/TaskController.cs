@@ -40,8 +40,10 @@ namespace RESTService.Controllers
             if(ModelState.IsValid)
             {
                 BllTask task = Mapper.Map<BllTask>(createTaskViewModel);
-                taskService.Create(task);
-                return Ok();
+                BllTask commitedBllTask = taskService.Create(task);
+                TaskViewModel commitedViewModelTask = Mapper.Map<TaskViewModel>(commitedBllTask);
+                var jsonCommitedTaskViewModel = Json(commitedViewModelTask);
+                return jsonCommitedTaskViewModel;
             }
             else
             {

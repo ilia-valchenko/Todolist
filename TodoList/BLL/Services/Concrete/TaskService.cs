@@ -5,6 +5,7 @@ using DAL.Repositories.Interfaces;
 using DAL.Entities;
 using BLL.Models;
 using AutoMapper;
+using BLL.Infrastructure;
 
 namespace BLL.Services.Concrete
 {
@@ -12,22 +13,32 @@ namespace BLL.Services.Concrete
     {
         private readonly ITaskRepository taskRepository;
         private readonly IElasticRepository elasticRepository;
+        private readonly IIdentifierGenerator idGenerator;
+        private int id;
 
-        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository)
+        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository, IIdentifierGenerator idGenerator, int startId)
         {
             this.taskRepository = taskRepository;
             this.elasticRepository = elasticRepository;
+            this.idGenerator = idGenerator;
+            this.id = startId;
         }
 
         #region CRUD
-        public void Create(BllTask createdBllTask)
-        {               
+        public BllTask Create(BllTask createdBllTask)
+        {
+            id = idGenerator.GenerateNextId(id);
+            createdBllTask.Id = id;
             createdBllTask.PublishDate = DateTime.Now;
 
             DalTask createdDalTask = Mapper.Map<DalTask>(createdBllTask);
 
-            taskRepository.Create(createdDalTask);
+            DalTask commitedDalTask = taskRepository.Create(createdDalTask);
             elasticRepository.Create(createdDalTask);
+
+            BllTask commitedBllTask = Mapper.Map<BllTask>(commitedDalTask);
+
+            return commitedBllTask;
         }
 
         public void Update(BllTask updatedBllTask)

@@ -7,7 +7,9 @@ namespace DAL.Entities
         public DalTaskMap()
         {
             Table("Task");
-            Id(x => x.Id);
+            //Id(x => x.Id);
+            
+            Map(x => x.Id).Column("Id");
             Map(x => x.Title);
             Map(x => x.Description);
             Map(x => x.PublishDate);
