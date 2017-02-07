@@ -36,9 +36,16 @@
 
         <div>
             <input type="submit" class="btn" value="Submit"/>
-            <input type="button" class="btn" value="Close" ng-click="hidePopup()" />
+            <input type="button" class="btn" value="Close" ng-click="isVisiblePopup = false" />
         </div>
     </form>
+
+    <div id="error-popup" ng-show="isVisibleErrorPopup">
+        <h3>Error: <span ng-bind="errorStatusCode"></span></h3>
+        <h4 ng-bind="errorHeader"></h4>
+        <p id="error-message" ng-bind="errorMessage"></p>
+        <input type="button" value="Close" ng-click="isVisibleErrorPopup = false">
+    </div>
 
     <footer class="main-footer">
         Created by <a href="https://github.com/ilia-valchenko/Todolist" target="_blank" title="Check out my project on GitHub">Ilya Valchanka</a>.

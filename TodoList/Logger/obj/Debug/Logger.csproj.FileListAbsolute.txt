@@ -5,3 +5,4 @@ D:\GitProjects\todolist\TodoList\Logger\bin\Debug\NLog.dll
 D:\GitProjects\todolist\TodoList\Logger\bin\Debug\NLog.xml
 D:\GitProjects\todolist\TodoList\Logger\obj\Debug\Logger.dll
 D:\GitProjects\todolist\TodoList\Logger\obj\Debug\Logger.pdb
+D:\GitProjects\todolist\TodoList\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache

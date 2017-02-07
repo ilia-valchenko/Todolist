@@ -4,7 +4,6 @@
     todoListModule.controller('TodoListController', ['$scope', '$http', 'Tasks', function ($scope, $http, Tasks) {
 
         $scope.tasks = [];
-        $scope.isVisiblePopup = false;
         var isExist = false;
         
         function Init() {
@@ -13,26 +12,21 @@
 
                 for (var i = 0; i < objectsFromJson.length; i++)
                     $scope.tasks.push(objectsFromJson[i]);
-            }), function () {
-                alert("Oops! Something went wrong. I can't get list of tasks.");
+            }), function (response) {
+                // error
+                initializeAndOpenErrorPopup(response);
             };
         };
 
+        // Initialize application
         Init();
-
-        $scope.showPopup = function () {
-            $scope.isVisiblePopup = true;
-        };
-
-        $scope.hidePopup = function () {
-            $scope.isVisiblePopup = false;
-        };
 
         $scope.submitNewTask = function () {
 
             console.log("Into submit new task function. isExist: " + isExist);
 
             if (isExist) {
+                // Update task
                 // Update date on UI
                 $scope.tasks[$scope.id].Title = $scope.title;
                 $scope.tasks[$scope.id].Description = $scope.description;
@@ -49,12 +43,13 @@
                     $scope.tasks.push(response.data);
                     console.log("The task with id: " + $scope.tasks[$scope.id].Id + " was successfully updated.");
                 },
-                    function () {
-                        console.log("Something went wrong. The new task with id: " + $scope.tasks[$scope.id].Id + " wasn't updated.");
+                    function (response) {
+                        // error
+                        initializeAndOpenErrorPopup(response);
                     });
             }
             else {
-
+                // Create task
                 var data = { "title": $scope.title, "description": $scope.description };
 
                 $http.post(
@@ -75,8 +70,9 @@
 
                     //$scope.tasks.push(response.data);
                 },
-                    function () {
-                        console.log("Something went wrong. A new task wasn't added.");
+                    function (response) {
+                        // error
+                        initializeAndOpenErrorPopup(response);
                     });
             }
 
@@ -94,8 +90,9 @@
             ).then(function (response) {
                 $scope.tasks = response.data;
             },
-                function () {
-                    console.log("Something went wrong. Query finished unsuccessfully.");
+                function (response) {
+                    // error
+                    initializeAndOpenErrorPopup(response);
                 });
         };
 
@@ -110,22 +107,21 @@
                 ).then(function (response) {
                     $scope.tasks.splice(index, 1);
                 },
-                function () {
-                    console.log("Something went wrong. The was't deleted.");
+                function (response) {
+                    // error
+                    initializeAndOpenErrorPopup(response);
                 });
             }
 
         };
 
         $scope.editTask = function (index) {
-
-            console.log("Edit task function.");
-
             $scope.title = $scope.tasks[index].Title;
             $scope.description = $scope.tasks[index].Description;
             $scope.id = index;
             isExist = true;
 
+            // fix it
             $scope.isVisiblePopup = true;
         };
 
@@ -136,7 +132,20 @@
             $scope.id = 0;
             isExist = false;
 
+            // fix it
             $scope.isVisiblePopup = true;
+        };
+
+        function initializeAndOpenErrorPopup(response) {
+
+            console.log("Status code: " + response.status);
+            console.log("Status text: " + response.statusText);
+            console.log("Message: " + response.data);
+
+            $scope.isVisibleErrorPopup = true;
+            $scope.errorStatusCode = response.status;
+            $scope.errorHeader = response.statusText;
+            $scope.errorMessage = response.data;
         };
 
     }]);
