@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using DAL.Entities;
 using NHibernate;
-using DAL.Helpers;
 using DAL.Repositories.Interfaces;
 using NHibernate.Linq;
 
@@ -11,149 +8,67 @@ namespace DAL.Concrete
 {
     public class TaskRepository : ITaskRepository
     {
+        private readonly ISessionFactory sessionFactory;
+
+        public TaskRepository(ISessionFactory sessionFactory)
+        {
+            this.sessionFactory = sessionFactory;
+        }
+
         public void Create(DalTask task)
         {
-            //try
-            //{
-                using (ISession session = NhibernateHelper.OpenSession())
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
                 {
-                    //try
-                    //{
-                        using (ITransaction transaction = session.BeginTransaction())
-                        {
-                            session.Save(task);
-                            transaction.Commit();
-                        }
-                    //}
-                    //catch(TransactionException transactionException)
-                    //{
-                    //    // ILogger
-                    //    throw;
-                    //}
+                    session.Save(task);
+                    transaction.Commit();
                 }
-            //}
-            //catch(TransactionException transactionException)
-            //{
-            //    // ILogger
-            //    throw;
-            //}
-            //catch(SessionException sessionException)
-            //{
-            //    // ILogger
-            //    throw;
-            //}
-            //catch(Exception exception)
-            //{
-            //    // ILogger
-            //    throw;
-            //}
+            }
         }
 
         public void Update(DalTask task)
         {
-            try
+            using (ISession session = sessionFactory.OpenSession())
             {
-                using (ISession session = NhibernateHelper.OpenSession())
+                using (ITransaction transaction = session.BeginTransaction())
                 {
-                    try
-                    {
-                        using (ITransaction transaction = session.BeginTransaction())
-                        {
-                            session.Update(task);
-                            transaction.Commit();
-                        }
-                    }
-                    catch (TransactionException transactionException)
-                    {
-                        // ILogger
-                        throw;
-                    }
+                    session.Update(task);
+                    transaction.Commit();
                 }
-            }
-            catch(SessionException sessionException)
-            {
-                // ILogger
-                throw;
             }
         }
 
         public void Delete(int id)
         {
-            try
+            using (ISession session = sessionFactory.OpenSession())
             {
-                using (ISession session = NhibernateHelper.OpenSession())
+                using (ITransaction transaction = session.BeginTransaction())
                 {
-                    try
-                    {
-                        using (ITransaction transaction = session.BeginTransaction())
-                        {
-                            DalTask deletingTask = session.Load<DalTask>(id);
-                            session.Delete(deletingTask);
-                            transaction.Commit();
-                        }
-                    }
-                    catch (TransactionException transactionException)
-                    {
-                        // write lo log
-                        // ILogger.Write()
-                        throw;
-                    }
+                    DalTask deletingTask = session.Load<DalTask>(id);
+                    session.Delete(deletingTask);
+                    transaction.Commit();
                 }
-            }
-            catch(SessionException sessionException)
-            {
-                // write lo log
-                // ILogger.Write()
-            }
-            catch(Exception exception)
-            {
-                // write lo log
-                // ILogger.Write()
             }
         }
 
         public IEnumerable<DalTask> GetAll()
         {
-            try
+            using (ISession session = sessionFactory.OpenSession())
             {
-                using (ISession session = NhibernateHelper.OpenSession())
-                {
-                    // session closed
-                    //return session.Query<Task>().Select(t => t.ToDalTaks());
-                    return session.CreateCriteria<DalTask>().List<DalTask>();
-                }
-            }
-            catch(SessionException sessionException)
-            {
-                // ILogger
-                throw;
-            }
-            catch(Exception exception)
-            {
-                // ILogger
-                throw;
+                // session closed
+                //return session.Query<Task>().Select(t => t.ToDalTaks());
+                IEnumerable<DalTask> tasks = session.CreateCriteria<DalTask>().List<DalTask>();
+                return tasks;
             }
         }
 
         public DalTask GetById(int id)
         {
-            try
+            using (ISession session = sessionFactory.OpenSession())
             {
-                using (ISession session = NhibernateHelper.OpenSession())
-                {
-                    DalTask task = session.Get<DalTask>(id);
-                    return task;
-                }
-            }
-            catch(SessionException sessionException)
-            {
-                // log it
-                throw;
-            }
-            catch(Exception exception)
-            {
-                // log it
-                throw;
+                DalTask task = session.Get<DalTask>(id);
+                return task;
             }
         }
     }

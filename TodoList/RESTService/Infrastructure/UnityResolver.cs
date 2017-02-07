@@ -8,31 +8,20 @@ namespace RESTService.Infrastructure
 {
     public class UnityResolver : IDependencyResolver
     {
-        private IUnityContainer Container
-        {
-            get
-            {
-                return container;
-            }
-            set
-            {
-                if (value == null)
-                    throw new ArgumentNullException("Unity container");
-
-                container = value;
-            }
-        }
+        private readonly IUnityContainer container;
+        private bool disposed;
 
         public UnityResolver(IUnityContainer container)
         {
-            Container = container;
+            this.container = container;
             disposed = false;
         }
 
         public IDependencyScope BeginScope()
         {
-            var child = Container.CreateChildContainer();
-            return new UnityResolver(child);
+            var child = container.CreateChildContainer();
+            var result = new UnityResolver(child);
+            return result;
         }
 
         public void Dispose()
@@ -45,7 +34,7 @@ namespace RESTService.Infrastructure
         {
             if (!disposed)
             {
-                Container.Dispose();
+                container.Dispose();
                 disposed = true;
             }
         }
@@ -54,9 +43,9 @@ namespace RESTService.Infrastructure
         {
             try
             {
-                return Container.Resolve(serviceType);
+                return container.Resolve(serviceType);
             }
-            catch(ResolutionFailedException exc)
+            catch (ResolutionFailedException exc)
             {
                 // write exception into a logfile
                 Debug.WriteLine($"Error. Error message: {exc.Message}. StackTrace: {exc.StackTrace}");
@@ -68,7 +57,7 @@ namespace RESTService.Infrastructure
         {
             try
             {
-                return Container.ResolveAll(serviceType);
+                return container.ResolveAll(serviceType);
             }
             catch (ResolutionFailedException exc)
             {
@@ -77,8 +66,5 @@ namespace RESTService.Infrastructure
                 return null;
             }
         }
-
-        private IUnityContainer container;
-        private bool disposed;
     }
 }

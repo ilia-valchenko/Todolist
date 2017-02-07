@@ -81,7 +81,6 @@
   <ItemGroup>
     <Compile Include="Entities\DalTask.cs" />
     <Compile Include="Entities\DalTaskMap.cs" />
-    <Compile Include="Helpers\NhibernateHelper.cs" />
     <Compile Include="Repositories\Concrete\ElasticRepository.cs" />
     <Compile Include="Repositories\Concrete\TaskRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

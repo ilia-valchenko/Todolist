@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DAL.Entities;
 using DAL.Repositories.Interfaces;
 using Nest;
-using Elasticsearch.Net;
 
 namespace DAL.Repositories.Concrete
 {
@@ -50,93 +49,36 @@ namespace DAL.Repositories.Concrete
         #region CRUD
         public void Create(DalTask entity)
         {
-            try
-            {
-                elasticClient.Index(entity);
-            }
-            catch (ElasticsearchClientException clientException)
-            {
-                // ILogger
-                throw;
-            }
-            catch(Exception exception)
-            {
-                // ILogger
-                throw;
-            }
+            IIndexResponse indexResponse = elasticClient.Index(entity);
         }
 
         public void Update(DalTask entity)
         {
-            try
-            {
-                elasticClient.Update<DalTask>(entity.Id, u => u.Doc(entity));
-            }
-            catch(ElasticsearchClientException clientException)
-            {
-                // ILogger
-                throw;
-            }
-            catch(Exception exception)
-            {
-                // ILogger
-                throw;
-            }
+            IUpdateResponse<DalTask> updateResponse = elasticClient.Update<DalTask>(entity.Id, u => u.Doc(entity));
         }
 
         public void Delete(int id)
         {
-            try
-            {
-                elasticClient.Delete<DalTask>(id.ToString());
-            }
-            catch(ElasticsearchClientException clientException)
-            {
-                // ILogger
-                throw;
-            }
-            catch(Exception exception)
-            {
-                // ILogger
-                throw;
-            }
+            IDeleteResponse deleteResponse = elasticClient.Delete<DalTask>(id.ToString());
         }
         #endregion
 
         #region Get
         public IEnumerable<DalTask> GetAll()
         {
-            ISearchResponse<DalTask> searchResponse;
+            ISearchResponse<DalTask> searchResponse = elasticClient.Search<DalTask>();
+            return searchResponse.Documents;
+        }
 
-            try
-            {
-                searchResponse = elasticClient.Search<DalTask>();
-            }
-            catch(ElasticsearchClientException clientException)
-            {
-                // ILogger
-                throw;
-            }
-            catch(Exception exception)
-            {
-                // ILogger
-                throw;
-            }
-            
-            IEnumerable<DalTask> documents = searchResponse.Documents;
-            return documents;
-        } 
-            
-
-        public DalTask GetById(int id) => elasticClient?.Get<DalTask>(id.ToString()).Source;
+        public DalTask GetById(int id)
+        {
+            IGetResponse<DalTask> getResponse = elasticClient.Get<DalTask>(id.ToString());
+            return getResponse.Source;
+        }
 
         public IEnumerable<DalTask> GetQueryResults(string query)
         {
-            ISearchResponse<DalTask> searchResponse;
-
-            try
-            {
-                searchResponse =
+            ISearchResponse<DalTask> searchResponse = 
                 elasticClient.Search<DalTask>(s => s
                     .Query(q => q
                         .Bool(b => b
@@ -154,17 +96,6 @@ namespace DAL.Repositories.Concrete
                         )
                     )
                 );
-            }
-            catch(ElasticsearchClientException clientException)
-            {
-                // ILogger
-                throw;
-            }
-            catch(Exception exception)
-            {
-                // ILogger
-                throw;
-            }
 
             return searchResponse.Documents;
         }

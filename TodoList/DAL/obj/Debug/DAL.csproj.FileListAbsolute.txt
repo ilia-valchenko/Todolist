@@ -66,4 +66,3 @@ D:\GitProjects\todolist\TodoList\DAL\bin\Debug\Newtonsoft.Json.xml
 D:\GitProjects\todolist\TodoList\DAL\bin\Debug\NHibernate.xml
 D:\GitProjects\todolist\TodoList\DAL\obj\Debug\DAL.dll
 D:\GitProjects\todolist\TodoList\DAL\obj\Debug\DAL.pdb
-D:\GitProjects\todolist\TodoList\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

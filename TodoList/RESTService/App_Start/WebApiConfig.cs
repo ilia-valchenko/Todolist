@@ -1,6 +1,5 @@
 ﻿using System.Web.Http;
 using Microsoft.Practices.Unity;
-using Bootstrap.Unity;
 using Bootstrap;
 using RESTService.Infrastructure;
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using BLL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
 using DAL.Entities;
@@ -25,18 +24,7 @@ namespace BLL.Services.Concrete
         {               
             createdBllTask.PublishDate = DateTime.Now;
 
-            DalTask createdDalTask;
-
-            try
-            {
-                createdDalTask = Mapper.Map<DalTask>(createdBllTask);
-            }
-            catch(AutoMapperMappingException mappingException)
-            {
-                // ILogger
-                // throw new
-                throw;
-            }
+            DalTask createdDalTask = Mapper.Map<DalTask>(createdBllTask);
 
             taskRepository.Create(createdDalTask);
             elasticRepository.Create(createdDalTask);
@@ -44,17 +32,7 @@ namespace BLL.Services.Concrete
 
         public void Update(BllTask updatedBllTask)
         {
-            DalTask updatedDalTask;
-                
-            try
-            {
-                updatedDalTask = Mapper.Map<DalTask>(updatedBllTask);
-            }
-            catch(AutoMapperMappingException mappingException)
-            {
-                // ILogger
-                throw;
-            }
+            DalTask updatedDalTask = Mapper.Map<DalTask>(updatedBllTask);
              
             taskRepository.Update(updatedDalTask);
             elasticRepository.Update(updatedDalTask);
@@ -76,18 +54,7 @@ namespace BLL.Services.Concrete
         public IEnumerable<BllTask> GetAll()
         {
             IEnumerable<DalTask> dalTasks = elasticRepository.GetAll();
-            IEnumerable<BllTask> bllTasks;
-
-            try
-            {
-                bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
-            }    
-            catch(AutoMapperMappingException mappingException)
-            {
-                // ILogger
-                throw;
-            }    
-
+            IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
             return bllTasks;
         }
 
@@ -96,7 +63,10 @@ namespace BLL.Services.Concrete
         //    foreach (var item in taskRepository?.GetAll())
         //        elasticRepository.Create(item);
 
-        //    return taskRepository?.GetAll().Select(t => t.ToBllTask());
+        //    IEnumerable<DalTask> dalTasks = taskRepository.GetAll();
+        //    IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
+
+        //    return bllTasks;
         //}
 
         public BllTask GetById(int id)
@@ -107,18 +77,7 @@ namespace BLL.Services.Concrete
             }
 
             DalTask dalTask = elasticRepository.GetById(id);
-            BllTask bllTask;
-
-            try
-            {
-                bllTask = Mapper.Map<BllTask>(dalTask);
-            }
-            catch(AutoMapperMappingException mappingException)
-            {
-                // ILogger
-                throw;
-            }
-
+            BllTask bllTask = Mapper.Map<BllTask>(dalTask);
             return bllTask;
         }
 
@@ -127,34 +86,12 @@ namespace BLL.Services.Concrete
             if (String.IsNullOrEmpty(query))
             {
                 IEnumerable<DalTask> dalTasks = elasticRepository.GetAll();
-                IEnumerable<BllTask> bllTasks;
-
-                try
-                {
-                    bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
-                }
-                catch(AutoMapperMappingException mappingException)
-                {
-                    // ILogger
-                    throw;
-                }
-
+                IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
                 return bllTasks;
             }
 
             IEnumerable<DalTask> queryResultDalTasks = elasticRepository.GetQueryResults(query.ToLowerInvariant());
-            IEnumerable<BllTask> queryResultBllTasks;
-
-            try
-            {
-                queryResultBllTasks = Mapper.Map<IEnumerable<BllTask>>(queryResultDalTasks);
-            }
-            catch(AutoMapperMappingException mappingException)
-            {
-                // ILogger
-                throw;
-            }
-
+            IEnumerable<BllTask> queryResultBllTasks = Mapper.Map<IEnumerable<BllTask>>(queryResultDalTasks);
             return queryResultBllTasks;
         } 
         #endregion
