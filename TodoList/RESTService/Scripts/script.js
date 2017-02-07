@@ -23,14 +23,7 @@
 
         $scope.submitNewTask = function () {
 
-            console.log("Into submit new task function. isExist: " + isExist);
-
             if (isExist) {
-                // Update task
-                // Update date on UI
-                $scope.tasks[$scope.id].Title = $scope.title;
-                $scope.tasks[$scope.id].Description = $scope.description;
-
                 var data = { "id": $scope.tasks[$scope.id].Id, "title": $scope.title, "description": $scope.description, "publishDate": $scope.tasks[$scope.id].PublishDate, "IsCompleted": $scope.tasks[$scope.id].IsCompleted };
 
                 $http.put(
@@ -40,8 +33,9 @@
                         headers: { 'Content-Type': 'application/json' }
                     }
                 ).then(function (response) {
-                    $scope.tasks.push(response.data);
-                    console.log("The task with id: " + $scope.tasks[$scope.id].Id + " was successfully updated.");
+                    // Update task on UI
+                    $scope.tasks[$scope.id].Title = $scope.title;
+                    $scope.tasks[$scope.id].Description = $scope.description;
                 },
                     function (response) {
                         // error
@@ -59,16 +53,16 @@
                         headers: { 'Content-Type': 'application/json' }
                     }
                 ).then(function (response) {
+                    // response is empty data with 200 status code
+                    
                     // stub
                     // change returning types of service
 
-                    var newtask = $scope.tasks[1];
-                    newtask.Title = $scope.title;
-                    newtask.Description = $scope.description;
+                    //var newtask = $scope.tasks[1];
+                    //newtask.Title = $scope.title;
+                    //newtask.Description = $scope.description;
 
-                    $scope.tasks.push(newtask);
-
-                    //$scope.tasks.push(response.data);
+                    //$scope.tasks.push(newtask);
                 },
                     function (response) {
                         // error
@@ -137,11 +131,6 @@
         };
 
         function initializeAndOpenErrorPopup(response) {
-
-            console.log("Status code: " + response.status);
-            console.log("Status text: " + response.statusText);
-            console.log("Message: " + response.data);
-
             $scope.isVisibleErrorPopup = true;
             $scope.errorStatusCode = response.status;
             $scope.errorHeader = response.statusText;

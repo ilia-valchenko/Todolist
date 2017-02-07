@@ -33,7 +33,14 @@ namespace DAL.Concrete
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    session.Update(task);
+                    // test
+                    DalTask oldTask = session.Load<DalTask>(task.Id);
+                    oldTask.Title = task.Title;
+                    oldTask.Description = task.Description;
+
+                    //session.Update(task);
+                    session.Update(oldTask);
+
                     transaction.Commit();
                 }
             }
