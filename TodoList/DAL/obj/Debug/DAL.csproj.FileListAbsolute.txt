@@ -44,9 +44,6 @@ D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\FluentNHibernate.pdb
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\bin\Debug\FluentNHibernate.xml
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\obj\Debug\DAL.dll
 D:\GitProjects\TodolistNhibernate\TodoList\DAL\obj\Debug\DAL.pdb
-D:\GitProjects\todolist\TodoList\DAL\bin\Debug\App_Data\Taskstorage.mdf
-D:\GitProjects\todolist\TodoList\DAL\bin\Debug\App_Data\Taskstorage_log.ldf
-D:\GitProjects\todolist\TodoList\DAL\bin\Debug\DAL.dll.config
 D:\GitProjects\todolist\TodoList\DAL\bin\Debug\DAL.dll
 D:\GitProjects\todolist\TodoList\DAL\bin\Debug\DAL.pdb
 D:\GitProjects\todolist\TodoList\DAL\bin\Debug\Elasticsearch.Net.dll
@@ -66,3 +63,5 @@ D:\GitProjects\todolist\TodoList\DAL\bin\Debug\Newtonsoft.Json.xml
 D:\GitProjects\todolist\TodoList\DAL\bin\Debug\NHibernate.xml
 D:\GitProjects\todolist\TodoList\DAL\obj\Debug\DAL.dll
 D:\GitProjects\todolist\TodoList\DAL\obj\Debug\DAL.pdb
+D:\GitProjects\todolist\TodoList\DAL\bin\Debug\DAL.dll.config
+D:\GitProjects\todolist\TodoList\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

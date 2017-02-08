@@ -158,8 +158,6 @@ D:\GitProjects\todolist\TodoList\RESTService\bin\roslyn\System.Reflection.Metada
 D:\GitProjects\todolist\TodoList\RESTService\bin\roslyn\vbc.exe
 D:\GitProjects\todolist\TodoList\RESTService\bin\roslyn\VBCSCompiler.exe
 D:\GitProjects\todolist\TodoList\RESTService\bin\roslyn\VBCSCompiler.exe.config
-D:\GitProjects\todolist\TodoList\RESTService\bin\App_Data\Taskstorage.mdf
-D:\GitProjects\todolist\TodoList\RESTService\bin\App_Data\Taskstorage_log.ldf
 D:\GitProjects\todolist\TodoList\RESTService\bin\RESTService.dll.config
 D:\GitProjects\todolist\TodoList\RESTService\bin\RESTService.dll
 D:\GitProjects\todolist\TodoList\RESTService\bin\RESTService.pdb

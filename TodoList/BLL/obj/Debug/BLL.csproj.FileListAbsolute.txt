@@ -57,8 +57,6 @@ D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\AutoMapper.Net4.dll
 D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Bootstrapper.AutoMapper.dll
 D:\GitProjects\TodolistNhibernate\TodoList\BLL\bin\Debug\Bootstrapper.dll
 D:\GitProjects\todolist\TodoList\BLL\bin\Debug\AutoMapper.Net4.dll
-D:\GitProjects\todolist\TodoList\BLL\bin\Debug\App_Data\Taskstorage.mdf
-D:\GitProjects\todolist\TodoList\BLL\bin\Debug\App_Data\Taskstorage_log.ldf
 D:\GitProjects\todolist\TodoList\BLL\bin\Debug\BLL.dll.config
 D:\GitProjects\todolist\TodoList\BLL\bin\Debug\BLL.dll
 D:\GitProjects\todolist\TodoList\BLL\bin\Debug\BLL.pdb
