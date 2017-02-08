@@ -1,0 +1,8 @@
+D:\GitProjects\todolist\TodoList\Logger\bin\Release\NLog.config
+D:\GitProjects\todolist\TodoList\Logger\bin\Release\Logger.dll
+D:\GitProjects\todolist\TodoList\Logger\bin\Release\Logger.pdb
+D:\GitProjects\todolist\TodoList\Logger\bin\Release\NLog.dll
+D:\GitProjects\todolist\TodoList\Logger\bin\Release\NLog.xml
+D:\GitProjects\todolist\TodoList\Logger\obj\Release\Logger.csprojResolveAssemblyReference.cache
+D:\GitProjects\todolist\TodoList\Logger\obj\Release\Logger.dll
+D:\GitProjects\todolist\TodoList\Logger\obj\Release\Logger.pdb

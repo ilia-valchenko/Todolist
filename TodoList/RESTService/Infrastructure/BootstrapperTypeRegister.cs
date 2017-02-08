@@ -12,7 +12,7 @@ using DAL.Entities;
 using NHibernate.Tool.hbm2ddl;
 using FluentNHibernate.Cfg.Db;
 using System.Configuration;
-using DAL;
+using NHibernate;
 
 namespace RESTService.Infrastructure
 {
@@ -20,19 +20,20 @@ namespace RESTService.Infrastructure
     {
         public void Register(IUnityContainer container)
         {
-            container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager(), 
-                                                                    new InjectionConstructor(
-                                                                        Fluently.Configure()
-                                                                        .Database(MsSqlConfiguration.MsSql2012.ConnectionString(ConfigurationManager.AppSettings["connectionString"]).ShowSql())
-                                                                        .Mappings(m => m.FluentMappings.AddFromAssemblyOf<DalTaskMap>())
-                                                                        .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
-                                                                        .BuildSessionFactory()));
+            container.RegisterInstance(typeof(ISessionFactory),
+                                       Fluently.Configure()
+                                               .Database(MsSqlConfiguration.MsSql2012.ConnectionString(ConfigurationManager.AppSettings["connectionString"]).ShowSql())
+                                               .Mappings(m => m.FluentMappings.AddFromAssemblyOf<DalTaskMap>())
+                                               .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
+                                               .BuildSessionFactory(),
+                                       new ContainerControlledLifetimeManager());
+
+            container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
 
             container.RegisterType<IElasticRepository, ElasticRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<ITaskService, TaskService>(new ContainerControlledLifetimeManager());
+            container.RegisterType<ITaskService, TaskService>(new HierarchicalLifetimeManager());
             
-
-            container.RegisterType<IElasticClient, ElasticClient>(new HierarchicalLifetimeManager(), 
+            container.RegisterType<IElasticClient, ElasticClient>(new ContainerControlledLifetimeManager(), 
                                                                   new InjectionConstructor(
                                                                       new ConnectionSettings(
                                                                             new Uri(ConfigurationManager.AppSettings["elasticSearchUri"])
