@@ -5,7 +5,6 @@ using DAL.Repositories.Interfaces;
 using DAL.Entities;
 using BLL.Models;
 using AutoMapper;
-using BLL.Infrastructure;
 
 namespace BLL.Services.Concrete
 {
@@ -13,38 +12,31 @@ namespace BLL.Services.Concrete
     {
         private readonly ITaskRepository taskRepository;
         private readonly IElasticRepository elasticRepository;
-        private readonly IIdentifierGenerator idGenerator;
-        private int id;
 
-        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository, IIdentifierGenerator idGenerator, int startId)
+        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository)
         {
             this.taskRepository = taskRepository;
             this.elasticRepository = elasticRepository;
-            this.idGenerator = idGenerator;
-            this.id = startId;
         }
 
         #region CRUD
-        public BllTask Create(BllTask createdBllTask)
+        public BllTask Create(BllTask task)
         {
-            id = idGenerator.GenerateNextId(id);
-            createdBllTask.Id = id;
-            createdBllTask.PublishDate = DateTime.Now;
+            task.PublishDate = DateTime.Now;
 
-            DalTask createdDalTask = Mapper.Map<DalTask>(createdBllTask);
+            DalTask createdDalTask = Mapper.Map<DalTask>(task);
 
-            DalTask commitedDalTask = taskRepository.Create(createdDalTask);
+            createdDalTask.Id = taskRepository.Create(createdDalTask);
             elasticRepository.Create(createdDalTask);
 
-            BllTask commitedBllTask = Mapper.Map<BllTask>(commitedDalTask);
+            BllTask createdBllTask = Mapper.Map<BllTask>(createdDalTask);
 
-            return commitedBllTask;
+            return createdBllTask;
         }
 
         public void Update(BllTask updatedBllTask)
         {
             DalTask updatedDalTask = Mapper.Map<DalTask>(updatedBllTask);
-             
             taskRepository.Update(updatedDalTask);
             elasticRepository.Update(updatedDalTask);
         }

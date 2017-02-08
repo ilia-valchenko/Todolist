@@ -15,17 +15,21 @@ namespace DAL.Concrete
             this.sessionFactory = sessionFactory;
         }
 
-        public DalTask Create(DalTask task)
+        public int Create(DalTask task)
         {
+            object resultOfSaving;
+
             using (ISession session = sessionFactory.OpenSession())
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    session.Save(task);
+                    resultOfSaving = session.Save(task);
                     transaction.Commit();
-                    return task;
                 }
             }
+
+            int generatedId = (int)resultOfSaving;
+            return generatedId;
         }
 
         public void Update(DalTask task)
@@ -34,14 +38,9 @@ namespace DAL.Concrete
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    // test
-                    DalTask oldTask = session.Load<DalTask>(task.Id);
-                    oldTask.Title = task.Title;
-                    oldTask.Description = task.Description;
-
-                    //session.Update(task);
-                    session.Update(oldTask);
-
+                    string queryString = string.Format("update {0} as task set task.Title = :newTitle, task.Description = :newDescription where task.Id = :id", typeof(DalTask));
+                    IQuery query = session.CreateQuery(queryString).SetParameter("newTitle", task.Title).SetParameter("newDescription", task.Description).SetParameter("id", task.Id);
+                    int resultOfExcutionUpdate = query.ExecuteUpdate();
                     transaction.Commit();
                 }
             }
@@ -53,8 +52,9 @@ namespace DAL.Concrete
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    DalTask deletingTask = session.Load<DalTask>(id);
-                    session.Delete(deletingTask);
+                    string queryString = string.Format("delete {0} where id = :id", typeof(DalTask));
+                    IQuery query = session.CreateQuery(queryString).SetParameter("id", id);
+                    int resultOfExcutionUpdate = query.ExecuteUpdate();
                     transaction.Commit();
                 }
             }
@@ -66,8 +66,8 @@ namespace DAL.Concrete
             {
                 // session closed
                 //return session.Query<Task>().Select(t => t.ToDalTaks());
-                IEnumerable<DalTask> tasks = session.CreateCriteria<DalTask>().List<DalTask>();
-                return tasks;
+                ICriteria criteria = session.CreateCriteria<DalTask>();
+                return criteria.List<DalTask>();
             }
         }
 

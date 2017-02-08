@@ -33,7 +33,6 @@
                         headers: { 'Content-Type': 'application/json' }
                     }
                 ).then(function (response) {
-                    // Update task on UI
                     $scope.tasks[$scope.id].Title = $scope.title;
                     $scope.tasks[$scope.id].Description = $scope.description;
                 },
@@ -43,7 +42,6 @@
                     });
             }
             else {
-                // Create task
                 var data = { "title": $scope.title, "description": $scope.description };
 
                 $http.post(
@@ -53,8 +51,7 @@
                         headers: { 'Content-Type': 'application/json' }
                     }
                 ).then(function (response) {
-                    console.log("Response from create task function:");
-                    console.log(response);
+                    $scope.tasks.push(response.data);
                 },
                     function (response) {
                         // error

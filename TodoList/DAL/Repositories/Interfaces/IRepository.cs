@@ -4,7 +4,7 @@ namespace DAL.Repositories.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-        TEntity Create(TEntity entity);
+        int Create(TEntity entity);
         void Update(TEntity entity);
         void Delete(int id);
         TEntity GetById(int id);
