@@ -7,5 +7,7 @@ You need [ElasticSearch](https://www.elastic.co/products/elasticsearch) installe
  - AutoMapper v3
  - Bootstrapper v2
  - Microsoft.Practices.Unity v2
+ - AngularJS v1.6.0
+ - angular-sanitize.js v1.6.2
  
 You can specify connection string, default ElasticSearch index and type name into Web.config file. 
