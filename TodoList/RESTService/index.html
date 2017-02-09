@@ -16,7 +16,7 @@
 
     <div id="main">
         <article ng-repeat="task in tasks track by $index" id="{{task.Id}}">
-            <h3>{{task.Title}}</h3>
+            <h3 ng-bind-html="$sce.trustAsHtml(task.Title)"></h3>
             <p>{{task.Description}}</p>
             <small>Date: {{task.PublishDate | date: 'MM/dd/yyyy @ h:mma'}}</small>
             <footer><small>Is completed: {{task.IsCompleted}} | <a href="#" ng-click="editTask($index)">Edit</a> | <a href="#" ng-click="deleteTask($index)">Delete</a></small></footer>
@@ -52,8 +52,12 @@
     </footer>
 
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-sanitize.js"</script>
     <script src="Scripts/jquery-3.1.1.js"></script>
     <script src="Scripts/repository.js"></script>
     <script src="Scripts/script.js"></script>
 </body>
 </html>
+
+
+

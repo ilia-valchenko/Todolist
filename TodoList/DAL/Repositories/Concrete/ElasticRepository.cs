@@ -2,6 +2,7 @@
 using DAL.Entities;
 using DAL.Repositories.Interfaces;
 using Nest;
+using System.Linq;
 
 namespace DAL.Repositories.Concrete
 {
@@ -63,9 +64,25 @@ namespace DAL.Repositories.Concrete
                             )
                         )
                     )
+                    .Highlight(h => h
+                        .Fields(fs => fs
+                            .Field(fl => fl.Title)
+                        )
+                    )
                 );
 
-            return searchResponse.Documents;
+            // Add new entity for displaying tasks with highlights
+            IEnumerable<DalTask> searchResults = searchResponse.Documents;
+            IReadOnlyCollection<IHit<DalTask>> hits = searchResponse.Hits;
+            
+            for(int i = 0; i < hits.Count; i++)
+            {
+                var highlights = hits.ElementAt(i).Highlights;
+                var highlightedTextTitle = highlights["Title"].Highlights.ElementAt(0);
+                searchResults.ElementAt(i).Title = highlightedTextTitle;
+            }
+
+            return searchResults;
         }
         #endregion
     }

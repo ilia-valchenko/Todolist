@@ -1,8 +1,9 @@
 (function () {
-    var todoListModule = angular.module('TodoList', ['Repository']);
+    var todoListModule = angular.module('TodoList', ['Repository', 'ngSanitize']);
 
-    todoListModule.controller('TodoListController', ['$scope', '$http', 'Tasks', function ($scope, $http, Tasks) {
+    todoListModule.controller('TodoListController', ['$scope', '$http', '$sce', 'Tasks', function ($scope, $http, $sce, Tasks) {
 
+        $scope.$sce = $sce;
         $scope.tasks = [];
         var isExist = false;
         
@@ -13,7 +14,7 @@
                 for (var i = 0; i < objectsFromJson.length; i++)
                     $scope.tasks.push(objectsFromJson[i]);
             }), function (response) {
-                // error
+                // Fill abd display error popup
                 initializeAndOpenErrorPopup(response);
             };
         };
@@ -37,7 +38,7 @@
                     $scope.tasks[$scope.id].Description = $scope.description;
                 },
                     function (response) {
-                        // error
+                        // Fill abd display error popup
                         initializeAndOpenErrorPopup(response);
                     });
             }
@@ -54,7 +55,7 @@
                     $scope.tasks.push(response.data);
                 },
                     function (response) {
-                        // error
+                        // Fill abd display error popup
                         initializeAndOpenErrorPopup(response);
                     });
             }
@@ -74,7 +75,7 @@
                 $scope.tasks = response.data;
             },
                 function (response) {
-                    // error
+                    // Fill abd display error popup
                     initializeAndOpenErrorPopup(response);
                 });
         };
@@ -91,7 +92,7 @@
                     $scope.tasks.splice(index, 1);
                 },
                 function (response) {
-                    // error
+                    // Fill abd display error popup
                     initializeAndOpenErrorPopup(response);
                 });
             }
@@ -104,7 +105,7 @@
             $scope.id = index;
             isExist = true;
 
-            // fix it
+            // simplify it
             $scope.isVisiblePopup = true;
         };
 
@@ -115,7 +116,7 @@
             $scope.id = 0;
             isExist = false;
 
-            // fix it
+            // simplify it
             $scope.isVisiblePopup = true;
         };
 

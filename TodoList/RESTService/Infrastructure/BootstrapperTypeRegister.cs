@@ -41,6 +41,7 @@ namespace RESTService.Infrastructure
                                                                       .DefaultIndex(ConfigurationManager.AppSettings["defaultIndex"])
                                                                       .DefaultTypeNameInferrer(type => ConfigurationManager.AppSettings["defaultType"])
                                                                  ));
+
         }
     }
 }

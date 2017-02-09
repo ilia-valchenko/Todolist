@@ -8,7 +8,7 @@ namespace DAL.Entities
     {
         [Number(Name = "Id")]
         public virtual int Id { get; set; }
-        [Text(Name = "Title", Index = false, Store = true)]
+        [Text(Name = "Title",/* Index = false,*/ Store = true)]
         public virtual string Title { get; set; }
         [Text(Name = "Description")]
         public virtual string Description { get; set; }
