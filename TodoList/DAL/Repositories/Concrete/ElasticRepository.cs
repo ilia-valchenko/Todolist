@@ -18,19 +18,16 @@ namespace DAL.Repositories.Concrete
         #region CRUD
         public void Create(DalTask entity)
         {
-            //IIndexResponse indexResponse = elasticClient.Index(entity);
             IIndexResponse indexResponse = elasticClient.Index(entity, i => i.Index("taskmanager"));
         }
 
         public void Update(DalTask entity)
         {
-            //IUpdateResponse<DalTask> updateResponse = elasticClient.Update<DalTask>(entity.Id, u => u.Doc(entity));
             IUpdateResponse<DalTask> updateResponse = elasticClient.Update<DalTask>(entity.Id, i => i.Index("taskmanager").Doc(entity));
         }
 
         public void Delete(int id)
         {
-            //IDeleteResponse deleteResponse = elasticClient.Delete<DalTask>(id.ToString());
             IDeleteResponse deleteResponse = elasticClient.Delete<DalTask>(id.ToString(), i => i.Index("taskmanager"));
         }
         #endregion
@@ -38,9 +35,6 @@ namespace DAL.Repositories.Concrete
         #region Get
         public IEnumerable<DalTask> GetAll()
         {
-            //ISearchResponse<DalTask> searchResponse = elasticClient.Search<DalTask>();
-            //return searchResponse.Documents;
-
             ISearchResponse<DalTask> searchResponse = elasticClient.Search<DalTask>(i => i.Index("taskmanager"));
             return searchResponse.Documents;
         }
@@ -53,31 +47,6 @@ namespace DAL.Repositories.Concrete
 
         public IEnumerable<DalTask> GetQueryResults(string query)
         {
-            //ISearchResponse<DalTask> searchResponse = 
-            //    elasticClient.Search<DalTask>(s => s
-            //    .Index("taskmanager")
-            //        .Query(q => q
-            //            .Bool(b => b
-            //                .Should(sh => sh
-            //                    .Wildcard(w => w
-            //                        .Field(f => f.Title)
-            //                        .Value($"*{query}*")
-            //                    ),
-            //                    shd => shd
-            //                        .Match(m => m
-            //                            .Field(f => f.Title)
-            //                            .Query(query)
-            //                        )
-            //                )
-            //            )
-            //        )
-            //        .Highlight(h => h
-            //            .Fields(fs => fs
-            //                .Field(fl => fl.Title)
-            //            )
-            //        )
-            //    );
-
             ISearchResponse<DalTask> searchResponse =
                 elasticClient.Search<DalTask>(s => s
                 .Index("taskmanager")

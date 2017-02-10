@@ -45,6 +45,7 @@ namespace RESTService.Infrastructure
                                 .MinGram(1)
                                 .MaxGram(15)
                                 .TokenChars(TokenChar.Letter, TokenChar.Digit)
+                                //.Version("4.1")
                             )
                         )
                         .Analyzers(analyzer => analyzer
