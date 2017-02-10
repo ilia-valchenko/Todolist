@@ -8,7 +8,7 @@ namespace DAL.Entities
     {
         [Number(Name = "Id")]
         public virtual int Id { get; set; }
-        [String(Name = "Title", Analyzer = "customIndexNgramAnalyzer", SearchAnalyzer = "customSearchNgramAnalyzer")]
+        [String(Name = "Title", Analyzer = "customIndexNgramAnalyzer", SearchAnalyzer = "customSearchNgramAnalyzer", IndexOptions = IndexOptions.Offsets)]
         public virtual string Title { get; set; }
         [String(Name = "Description")]
         public virtual string Description { get; set; }

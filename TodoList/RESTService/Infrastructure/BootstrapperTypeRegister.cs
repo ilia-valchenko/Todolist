@@ -42,6 +42,7 @@ namespace RESTService.Infrastructure
                     .Analysis(a => a
                         .Tokenizers(token => token
                             .NGram("customNGramTokenizer", ng => ng
+                            //.EdgeNGram("customNGramTokenizer", ng => ng
                                 .MinGram(1)
                                 .MaxGram(15)
                                 .TokenChars(TokenChar.Letter, TokenChar.Digit)
