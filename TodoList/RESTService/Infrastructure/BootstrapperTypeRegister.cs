@@ -13,6 +13,7 @@ using NHibernate.Tool.hbm2ddl;
 using FluentNHibernate.Cfg.Db;
 using System.Configuration;
 using NHibernate;
+using Logger;
 
 namespace RESTService.Infrastructure
 {
@@ -29,18 +30,43 @@ namespace RESTService.Infrastructure
                                        new ContainerControlledLifetimeManager());
 
             container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
-
             container.RegisterType<IElasticRepository, ElasticRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ITaskService, TaskService>(new HierarchicalLifetimeManager());
-            
-            container.RegisterType<IElasticClient, ElasticClient>(new ContainerControlledLifetimeManager(), 
-                                                                  new InjectionConstructor(
-                                                                      new ConnectionSettings(
-                                                                            new Uri(ConfigurationManager.AppSettings["elasticSearchUri"])
-                                                                      )
-                                                                      .DefaultIndex(ConfigurationManager.AppSettings["defaultIndex"])
-                                                                      .DefaultTypeNameInferrer(type => ConfigurationManager.AppSettings["defaultType"])
-                                                                 ));
+            container.RegisterType<System.Web.Http.Filters.IFilter, HandleExceptionsAttribute>(new ContainerControlledLifetimeManager(), new InjectionConstructor(new NLogLogger()));
+
+            ElasticClient client = new ElasticClient(new ConnectionSettings(new Uri(ConfigurationManager.AppSettings["elasticSearchUri"])));
+
+
+            ICreateIndexResponse createIndexResponse = client.CreateIndex("taskmanager", u => u
+                .Settings(s => s
+                    .Analysis(a => a
+                        .Tokenizers(token => token
+                            .NGram("customNGramTokenizer", ng => ng
+                                .MinGram(1)
+                                .MaxGram(15)
+                                .TokenChars(TokenChar.Letter, TokenChar.Digit)
+                            )
+                        )
+                        .Analyzers(analyzer => analyzer
+                            .Custom("customIndexNgramAnalyzer", cia => cia
+                                .Filters("lowercase")
+                                .Tokenizer("customNGramTokenizer")
+                            )
+                            .Custom("customSearchNgramAnalyzer", csa => csa
+                                .Filters("lowercase")
+                                .Tokenizer("keyword")
+                            )
+                        )
+                    )
+                )
+                .Mappings(map => map
+                    .Map<DalTask>(m => m
+                        .AutoMap()
+                    )
+                )
+           );
+
+           container.RegisterInstance<IElasticClient>(client, new ContainerControlledLifetimeManager());
 
         }
     }

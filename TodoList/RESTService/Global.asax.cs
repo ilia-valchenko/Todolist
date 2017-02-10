@@ -1,9 +1,9 @@
 ﻿using Bootstrap;
 using Bootstrap.Unity;
 using System.Web.Http;
-using RESTService.Infrastructure;
 using Bootstrap.AutoMapper;
-using Logger;
+using Microsoft.Practices.Unity;
+using System.Web.Http.Filters;
 
 namespace RESTService
 {
@@ -13,7 +13,7 @@ namespace RESTService
         {
             Bootstrapper.With.Unity().With.AutoMapper().Start();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            GlobalConfiguration.Configuration.Filters.Add(new HandleExceptionsAttribute(new NLogLogger()));
+            GlobalConfiguration.Configuration.Filters.Add(((IUnityContainer)Bootstrapper.Container).Resolve<IFilter>());
         }
     }
 }

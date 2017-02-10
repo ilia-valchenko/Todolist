@@ -8,11 +8,12 @@ namespace DAL.Entities
     {
         [Number(Name = "Id")]
         public virtual int Id { get; set; }
-        [Text(Name = "Title",/* Index = false,*/ Store = true)]
+        [String(Name = "Title", Analyzer = "customIndexNgramAnalyzer", SearchAnalyzer = "customSearchNgramAnalyzer")]
         public virtual string Title { get; set; }
-        [Text(Name = "Description")]
+        [String(Name = "Description")]
         public virtual string Description { get; set; }
-        [Date(Format = "MMddyyyy", Name = "PublishDate")]
+        //[Date(Format = "MMddyyyy", Name = "PublishDate")]
+        [Date(Name = "PublishDate")]
         public virtual DateTime PublishDate { get; set; }
         [Boolean(Name = "IsCompleted", NullValue = false, Store = true)]
         public virtual bool IsCompleted { get; set; }
