@@ -15,11 +15,15 @@
     </form>
 
     <div id="main">
-        <article ng-repeat="task in tasks track by $index" id="{{task.Id}}">
+        <article ng-repeat="task in tasks track by $index" ng-class="task.IsCompleted ? 'completed-task' : 'uncompleted-task'" id="{{task.Id}}">
             <h3 ng-bind-html="$sce.trustAsHtml(task.Title)"></h3>
             <p>{{task.Description}}</p>
             <small>Date: {{task.PublishDate | date: 'MM/dd/yyyy @ h:mma'}}</small>
-            <footer><small>Is completed: {{task.IsCompleted}} | <a href="#" ng-click="editTask($index)">Edit</a> | <a href="#" ng-click="deleteTask($index)">Delete</a></small></footer>
+            <footer>
+                <small>
+                    Is completed: <input type="checkbox" ng-checked="{{task.IsCompleted}}" ng-click="task.IsCompleted = !task.IsCompleted;"/> | <a href="#" ng-click="editTask($index)">Edit</a> | <a href="#" ng-click="deleteTask($index)">Delete</a>
+                </small>
+            </footer>
         </article>
     </div>
 
@@ -58,6 +62,3 @@
     <script src="Scripts/script.js"></script>
 </body>
 </html>
-
-
-

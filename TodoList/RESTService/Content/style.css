@@ -103,3 +103,24 @@ h1 {
     font-style: normal;
     background-color: #ffe83a;
 }
+
+/* IsCompleted checkbox */
+
+#main article footer small input[type=checkbox] {
+    margin: 0;
+}
+
+/* Line-through for completed task */
+
+.completed-task h3,
+.completed-task p,
+.completed-task small
+ {
+    text-decoration: line-through;
+}
+
+#main article footer small {
+    text-decoration: none;
+}
+
+
