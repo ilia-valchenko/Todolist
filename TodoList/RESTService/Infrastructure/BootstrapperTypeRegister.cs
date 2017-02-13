@@ -36,17 +36,14 @@ namespace RESTService.Infrastructure
 
             ElasticClient client = new ElasticClient(new ConnectionSettings(new Uri(ConfigurationManager.AppSettings["elasticSearchUri"])));
 
-
             ICreateIndexResponse createIndexResponse = client.CreateIndex("taskmanager", u => u
                 .Settings(s => s
                     .Analysis(a => a
                         .Tokenizers(token => token
                             .NGram("customNGramTokenizer", ng => ng
-                            //.EdgeNGram("customNGramTokenizer", ng => ng
                                 .MinGram(1)
                                 .MaxGram(15)
                                 .TokenChars(TokenChar.Letter, TokenChar.Digit)
-                                //.Version("4.1")
                             )
                         )
                         .Analyzers(analyzer => analyzer
