@@ -3,6 +3,7 @@ using DAL.Entities;
 using NHibernate;
 using DAL.Repositories.Interfaces;
 using NHibernate.Linq;
+using System.Linq;
 
 namespace DAL.Concrete
 {
@@ -64,10 +65,8 @@ namespace DAL.Concrete
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                // session closed
-                //return session.Query<Task>().Select(t => t.ToDalTaks());
-                ICriteria criteria = session.CreateCriteria<DalTask>();
-                return criteria.List<DalTask>();
+                var tasks = session.Query<DalTask>();
+                return tasks.ToList();
             }
         }
 
