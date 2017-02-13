@@ -5,11 +5,11 @@ namespace DAL.Repositories.Interfaces
 {
     public interface IElasticRepository
     {
-        void Create(DalTask task);
-        void Update(DalTask task);
-        void Delete(int id);
-        DalTask GetById(int id);
-        IEnumerable<DalTask> GetAll();
-        IEnumerable<DalTask> GetQueryResults(string query);
+        void Create(DalTask task, string indexName);
+        void Update(DalTask task, string indexName);
+        void Delete(int id, string indexName);
+        DalTask GetById(int id, string indexName);
+        IEnumerable<DalTask> GetAll(string indexName);
+        IEnumerable<DalTask> GetQueryResults(string query, string indexName);
     }
 }

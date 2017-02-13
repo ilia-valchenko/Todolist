@@ -3,7 +3,7 @@ using NLog;
 
 namespace Logger
 {
-    public class NLogLogger :  ILogger
+    public sealed class NLogLogger :  ILogger
     {
         private readonly NLog.Logger logger;
 

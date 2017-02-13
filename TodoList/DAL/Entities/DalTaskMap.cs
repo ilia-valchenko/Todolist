@@ -2,7 +2,7 @@
 
 namespace DAL.Entities
 {
-    public class DalTaskMap : ClassMap<DalTask>
+    public sealed class DalTaskMap : ClassMap<DalTask>
     {
         public DalTaskMap()
         {

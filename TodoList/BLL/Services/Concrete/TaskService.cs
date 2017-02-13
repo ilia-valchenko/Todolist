@@ -12,11 +12,13 @@ namespace BLL.Services.Concrete
     {
         private readonly ITaskRepository taskRepository;
         private readonly IElasticRepository elasticRepository;
+        private readonly string indexName;
 
-        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository)
+        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository, string indexName)
         {
             this.taskRepository = taskRepository;
             this.elasticRepository = elasticRepository;
+            this.indexName = indexName;
         }
 
         #region CRUD
@@ -27,7 +29,7 @@ namespace BLL.Services.Concrete
             DalTask createdDalTask = Mapper.Map<DalTask>(task);
 
             createdDalTask.Id = taskRepository.Create(createdDalTask);
-            elasticRepository.Create(createdDalTask);
+            elasticRepository.Create(createdDalTask, indexName);
 
             BllTask createdBllTask = Mapper.Map<BllTask>(createdDalTask);
 
@@ -38,7 +40,7 @@ namespace BLL.Services.Concrete
         {
             DalTask updatedDalTask = Mapper.Map<DalTask>(updatedBllTask);
             taskRepository.Update(updatedDalTask);
-            elasticRepository.Update(updatedDalTask);
+            elasticRepository.Update(updatedDalTask, indexName);
         }
 
         public void Delete(int id)
@@ -49,14 +51,14 @@ namespace BLL.Services.Concrete
             }
 
             taskRepository.Delete(id);
-            elasticRepository.Delete(id);
+            elasticRepository.Delete(id, indexName);
         }
         #endregion
 
         #region Get operations
         public IEnumerable<BllTask> GetAll()
         {
-            IEnumerable<DalTask> dalTasks = elasticRepository.GetAll();
+            IEnumerable<DalTask> dalTasks = elasticRepository.GetAll(indexName);
             IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
             return bllTasks;
         }
@@ -79,7 +81,7 @@ namespace BLL.Services.Concrete
                 throw new ArgumentException("The Id of seeking task can't be less then zero.");
             }
 
-            DalTask dalTask = elasticRepository.GetById(id);
+            DalTask dalTask = taskRepository.GetById(id);
             BllTask bllTask = Mapper.Map<BllTask>(dalTask);
             return bllTask;
         }
@@ -88,12 +90,12 @@ namespace BLL.Services.Concrete
         {
             if (String.IsNullOrEmpty(query))
             {
-                IEnumerable<DalTask> dalTasks = elasticRepository.GetAll();
+                IEnumerable<DalTask> dalTasks = elasticRepository.GetAll(indexName);
                 IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
                 return bllTasks;
             }
 
-            IEnumerable<DalTask> queryResultDalTasks = elasticRepository.GetQueryResults(query.ToLowerInvariant());
+            IEnumerable<DalTask> queryResultDalTasks = elasticRepository.GetQueryResults(query.ToLowerInvariant(), indexName);
             IEnumerable<BllTask> queryResultBllTasks = Mapper.Map<IEnumerable<BllTask>>(queryResultDalTasks);
             return queryResultBllTasks;
         } 

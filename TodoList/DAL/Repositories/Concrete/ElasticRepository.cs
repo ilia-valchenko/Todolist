@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DAL.Repositories.Concrete
 {
-    public class ElasticRepository : IElasticRepository
+    public sealed class ElasticRepository : IElasticRepository
     {
         private readonly IElasticClient elasticClient;
 
@@ -16,40 +16,40 @@ namespace DAL.Repositories.Concrete
         }
 
         #region CRUD
-        public void Create(DalTask entity)
+        public void Create(DalTask entity, string indexName)
         {
-            IIndexResponse indexResponse = elasticClient.Index(entity, i => i.Index("taskmanager"));
+            IIndexResponse indexResponse = elasticClient.Index(entity, i => i.Index(indexName));
         }
 
-        public void Update(DalTask entity)
+        public void Update(DalTask entity, string indexName)
         {
-            IUpdateResponse<DalTask> updateResponse = elasticClient.Update<DalTask>(entity.Id, i => i.Index("taskmanager").Doc(entity));
+            IUpdateResponse<DalTask> updateResponse = elasticClient.Update<DalTask>(entity.Id, i => i.Index(indexName).Doc(entity));
         }
 
-        public void Delete(int id)
+        public void Delete(int id, string indexName)
         {
-            IDeleteResponse deleteResponse = elasticClient.Delete<DalTask>(id.ToString(), i => i.Index("taskmanager"));
+            IDeleteResponse deleteResponse = elasticClient.Delete<DalTask>(id, i => i.Index(indexName));
         }
         #endregion
 
         #region Get
-        public IEnumerable<DalTask> GetAll()
+        public IEnumerable<DalTask> GetAll(string indexName)
         {
-            ISearchResponse<DalTask> searchResponse = elasticClient.Search<DalTask>(i => i.Index("taskmanager"));
+            ISearchResponse<DalTask> searchResponse = elasticClient.Search<DalTask>(i => i.Index(indexName));
             return searchResponse.Documents;
         }
 
-        public DalTask GetById(int id)
+        public DalTask GetById(int id, string indexName)
         {
-            IGetResponse<DalTask> getResponse = elasticClient.Get<DalTask>(id.ToString());
+            IGetResponse<DalTask> getResponse = elasticClient.Get<DalTask>(id, i => i.Index(indexName));
             return getResponse.Source;
         }
 
-        public IEnumerable<DalTask> GetQueryResults(string query)
+        public IEnumerable<DalTask> GetQueryResults(string query, string indexName)
         {
             ISearchResponse<DalTask> searchResponse =
                 elasticClient.Search<DalTask>(s => s
-                .Index("taskmanager")
+                .Index(indexName)
                     .Query(q => q
                         .Match(m => m
                             .Field(f => f.Title)

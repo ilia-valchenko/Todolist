@@ -5,7 +5,7 @@ using Logger;
 
 namespace RESTService.Infrastructure
 {
-    public class HandleExceptionsAttribute : ExceptionFilterAttribute
+    public sealed class HandleExceptionsAttribute : ExceptionFilterAttribute
     {
         private readonly ILogger logger;
 

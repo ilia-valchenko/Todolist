@@ -6,7 +6,7 @@ using DAL.Entities;
 
 namespace RESTService.Mappers
 {
-    public class BootstrapperAutoMapper : IMapCreator
+    public sealed class BootstrapperAutoMapper : IMapCreator
     {
         public void CreateMap(IProfileExpression mapper)
         {

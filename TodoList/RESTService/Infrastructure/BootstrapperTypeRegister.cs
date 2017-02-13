@@ -17,23 +17,10 @@ using Logger;
 
 namespace RESTService.Infrastructure
 {
-    public class BootstrapperTypeRegister : IUnityRegistration
+    public sealed class BootstrapperTypeRegister : IUnityRegistration
     {
         public void Register(IUnityContainer container)
         {
-            container.RegisterInstance(typeof(ISessionFactory),
-                                       Fluently.Configure()
-                                               .Database(MsSqlConfiguration.MsSql2012.ConnectionString(ConfigurationManager.AppSettings["connectionString"]).ShowSql())
-                                               .Mappings(m => m.FluentMappings.AddFromAssemblyOf<DalTaskMap>())
-                                               .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
-                                               .BuildSessionFactory(),
-                                       new ContainerControlledLifetimeManager());
-
-            container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IElasticRepository, ElasticRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<ITaskService, TaskService>(new HierarchicalLifetimeManager());
-            container.RegisterType<System.Web.Http.Filters.IFilter, HandleExceptionsAttribute>(new ContainerControlledLifetimeManager(), new InjectionConstructor(new NLogLogger()));
-
             ElasticClient client = new ElasticClient(new ConnectionSettings(new Uri(ConfigurationManager.AppSettings["elasticSearchUri"])));
 
             ICreateIndexResponse createIndexResponse = client.CreateIndex("taskmanager", u => u
@@ -65,8 +52,20 @@ namespace RESTService.Infrastructure
                 )
            );
 
-           container.RegisterInstance<IElasticClient>(client, new ContainerControlledLifetimeManager());
+            container.RegisterInstance<IElasticClient>(client, new ContainerControlledLifetimeManager());
 
+            container.RegisterInstance(typeof(ISessionFactory),
+                                       Fluently.Configure()
+                                               .Database(MsSqlConfiguration.MsSql2012.ConnectionString(ConfigurationManager.AppSettings["connectionString"]).ShowSql())
+                                               .Mappings(m => m.FluentMappings.AddFromAssemblyOf<DalTaskMap>())
+                                               .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
+                                               .BuildSessionFactory(),
+                                       new ContainerControlledLifetimeManager());
+
+            container.RegisterType<ITaskRepository, TaskRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IElasticRepository, ElasticRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<ITaskService, TaskService>(new HierarchicalLifetimeManager(), new InjectionConstructor(new ResolvedParameter<ITaskRepository>(), new ResolvedParameter<IElasticRepository>(), "taskmanager"));
+            container.RegisterType<System.Web.Http.Filters.IFilter, HandleExceptionsAttribute>(new ContainerControlledLifetimeManager(), new InjectionConstructor(new NLogLogger()));
         }
     }
 }
