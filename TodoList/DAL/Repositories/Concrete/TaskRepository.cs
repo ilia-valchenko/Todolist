@@ -39,9 +39,7 @@ namespace DAL.Concrete
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    string queryString = string.Format("update {0} as task set task.Title = :newTitle, task.Description = :newDescription where task.Id = :id", typeof(DalTask));
-                    IQuery query = session.CreateQuery(queryString).SetParameter("newTitle", task.Title).SetParameter("newDescription", task.Description).SetParameter("id", task.Id);
-                    int resultOfExcutionUpdate = query.ExecuteUpdate();
+                    session.Update(task);
                     transaction.Commit();
                 }
             }
@@ -53,9 +51,8 @@ namespace DAL.Concrete
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    string queryString = string.Format("delete {0} where id = :id", typeof(DalTask));
-                    IQuery query = session.CreateQuery(queryString).SetParameter("id", id);
-                    int resultOfExcutionUpdate = query.ExecuteUpdate();
+                    DalTask deletingTask = new DalTask { Id = id };
+                    session.Delete(deletingTask);
                     transaction.Commit();
                 }
             }

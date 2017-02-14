@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RESTService.ViewModels
 {
@@ -10,5 +11,7 @@ namespace RESTService.ViewModels
         [Required(ErrorMessage = "The title can't be empty!")]
         public string Title { get; set; }
         public string Description { get; set; }
+        public DateTime PublishDate { get; set; }
+        public bool IsCompleted { get; set; }
     }
 }

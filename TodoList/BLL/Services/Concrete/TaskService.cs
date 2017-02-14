@@ -56,24 +56,24 @@ namespace BLL.Services.Concrete
         #endregion
 
         #region Get operations
-        public IEnumerable<BllTask> GetAll()
-        {
-            IEnumerable<DalTask> dalTasks = elasticRepository.GetAll(indexName);
-            IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
-            return bllTasks;
-        }
-
         //public IEnumerable<BllTask> GetAll()
         //{
-        //    IEnumerable<DalTask> dalTasks = taskRepository.GetAll();
-
-        //    foreach (var item in dalTasks)
-        //        elasticRepository.Create(item, indexName);
-
+        //    IEnumerable<DalTask> dalTasks = elasticRepository.GetAll(indexName);
         //    IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
-
         //    return bllTasks;
         //}
+
+        public IEnumerable<BllTask> GetAll()
+        {
+            IEnumerable<DalTask> dalTasks = taskRepository.GetAll();
+
+            foreach (var item in dalTasks)
+                elasticRepository.Create(item, indexName);
+
+            IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
+
+            return bllTasks;
+        }
 
         public BllTask GetById(int id)
         {
