@@ -8,15 +8,14 @@
         var isExist = false;
         
         function Init() {
-            Tasks.getAll().then(function (response) {
-                var objectsFromJson = response.data;
-
-                for (var i = 0; i < objectsFromJson.length; i++)
-                    $scope.tasks.push(objectsFromJson[i]);
-            }), function (response) {
-                // Fill abd display error popup
-                initializeAndOpenErrorPopup(response);
-            };
+            Tasks.getAll().then(
+                function successCallback(response) {
+                    $scope.tasks = response.data;
+                },
+                function errorCallback(response) {
+                    initializeAndOpenErrorPopup(response);
+                }
+            )
         };
 
         // Initialize application
@@ -33,14 +32,15 @@
                     {
                         headers: { 'Content-Type': 'application/json' }
                     }
-                ).then(function (response) {
-                    $scope.tasks[$scope.id].Title = $scope.title;
-                    $scope.tasks[$scope.id].Description = $scope.description;
-                },
-                    function (response) {
-                        // Fill abd display error popup
+                ).then(
+                    function successCallback(response) {
+                        $scope.tasks[$scope.id].Title = $scope.title;
+                        $scope.tasks[$scope.id].Description = $scope.description;
+                    },
+                    function errorCallback(response) {
                         initializeAndOpenErrorPopup(response);
-                    });
+                    }
+               );
             }
             else {
                 var data = { "title": $scope.title, "description": $scope.description };
@@ -51,13 +51,14 @@
                     {
                         headers: { 'Content-Type': 'application/json' }
                     }
-                ).then(function (response) {
-                    $scope.tasks.push(response.data);
-                },
-                    function (response) {
-                        // Fill abd display error popup
+                ).then(
+                    function successCallback(response) {
+                        $scope.tasks.push(response.data);
+                    },
+                    function errorCallback(response) {
                         initializeAndOpenErrorPopup(response);
-                    });
+                    }
+               );
             }
 
             $scope.isVisiblePopup = false;
@@ -65,36 +66,36 @@
         };
 
         $scope.getQueryResults = function () {
-
             $http.get(
                 '/api/task/search',
                 {
                     params: { query: $scope.query }
                 }
-            ).then(function (response) {
-                $scope.tasks = response.data;
-            },
-                function (response) {
-                    // Fill abd display error popup
+            ).then(
+                function successCallback(response) {
+                    $scope.tasks = response.data;
+                },
+                function errorCallback(response) {
                     initializeAndOpenErrorPopup(response);
-                });
+                }
+            );
         };
 
         $scope.deleteTask = function (index) {
-
             if (confirm("Do you really want to delete this task?")) {
                 $http.delete(
                     '/api/task',
                     {
                         params: { id: $scope.tasks[index].Id }
                     }
-                ).then(function (response) {
-                    $scope.tasks.splice(index, 1);
-                },
-                function (response) {
-                    // Fill abd display error popup
-                    initializeAndOpenErrorPopup(response);
-                });
+                ).then(
+                    function successCallback(response) {
+                        $scope.tasks.splice(index, 1);
+                    },
+                    function errorCallback(response) {
+                        initializeAndOpenErrorPopup(response);
+                    }
+                );
             }
 
         };
