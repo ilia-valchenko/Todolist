@@ -36,11 +36,15 @@ namespace BLL.Services.Concrete
             return createdBllTask;
         }
 
-        public void Update(BllTask updatedBllTask)
+        public void Update(BllTask task)
         {
-            DalTask updatedDalTask = Mapper.Map<DalTask>(updatedBllTask);
-            taskRepository.Update(updatedDalTask);
-            elasticRepository.Update(updatedDalTask, indexName);
+            DalTask oldDalTask = taskRepository.GetById(task.Id);
+
+            oldDalTask.Title = task.Title;
+            oldDalTask.Description = task.Description;
+
+            taskRepository.Update(oldDalTask);
+            elasticRepository.Update(oldDalTask, indexName);
         }
 
         public void Delete(int id)
@@ -50,30 +54,32 @@ namespace BLL.Services.Concrete
                 throw new ArgumentException("The Id of deleting task can't be less then zero.");
             }
 
-            taskRepository.Delete(id);
+            DalTask task = taskRepository.GetById(id);
+
+            taskRepository.Delete(task);
             elasticRepository.Delete(id, indexName);
         }
         #endregion
 
         #region Get operations
-        //public IEnumerable<BllTask> GetAll()
-        //{
-        //    IEnumerable<DalTask> dalTasks = elasticRepository.GetAll(indexName);
-        //    IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
-        //    return bllTasks;
-        //}
-
         public IEnumerable<BllTask> GetAll()
         {
-            IEnumerable<DalTask> dalTasks = taskRepository.GetAll();
-
-            foreach (var item in dalTasks)
-                elasticRepository.Create(item, indexName);
-
+            IEnumerable<DalTask> dalTasks = elasticRepository.GetAll(indexName);
             IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
-
             return bllTasks;
         }
+
+        //public IEnumerable<BllTask> GetAll()
+        //{
+        //    IEnumerable<DalTask> dalTasks = taskRepository.GetAll();
+
+        //    foreach (var item in dalTasks)
+        //        elasticRepository.Create(item, indexName);
+
+        //    IEnumerable<BllTask> bllTasks = Mapper.Map<IEnumerable<BllTask>>(dalTasks);
+
+        //    return bllTasks;
+        //}
 
         public BllTask GetById(int id)
         {

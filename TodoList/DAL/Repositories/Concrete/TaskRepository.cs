@@ -45,14 +45,13 @@ namespace DAL.Concrete
             }
         }
 
-        public void Delete(int id)
+        public void Delete(DalTask task)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    DalTask deletingTask = new DalTask { Id = id };
-                    session.Delete(deletingTask);
+                    session.Delete(task);
                     transaction.Commit();
                 }
             }

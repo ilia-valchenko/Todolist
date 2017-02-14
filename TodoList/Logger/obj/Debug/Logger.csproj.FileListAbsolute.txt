@@ -13,3 +13,11 @@ D:\GitProjects\todo\TodoList\Logger\bin\Debug\NLog.xml
 D:\GitProjects\todo\TodoList\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
 D:\GitProjects\todo\TodoList\Logger\obj\Debug\Logger.dll
 D:\GitProjects\todo\TodoList\Logger\obj\Debug\Logger.pdb
+D:\Git\todolist\TodoList\Logger\bin\Debug\NLog.config
+D:\Git\todolist\TodoList\Logger\bin\Debug\Logger.dll
+D:\Git\todolist\TodoList\Logger\bin\Debug\Logger.pdb
+D:\Git\todolist\TodoList\Logger\bin\Debug\NLog.dll
+D:\Git\todolist\TodoList\Logger\bin\Debug\NLog.xml
+D:\Git\todolist\TodoList\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+D:\Git\todolist\TodoList\Logger\obj\Debug\Logger.dll
+D:\Git\todolist\TodoList\Logger\obj\Debug\Logger.pdb
