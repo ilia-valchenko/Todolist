@@ -100,9 +100,23 @@
 
         };
 
-        $scope.editTask = function (index) {
-            $scope.title = $scope.tasks[index].Title;
-            $scope.description = $scope.tasks[index].Description;
+        $scope.loadTaskToPopup = function (index) {
+
+            $http.get(
+                '/api/task',
+                {
+                    params: { id: $scope.tasks[index].Id }
+                }
+            ).then(
+                function successCallback(response) {
+                    $scope.title = response.data.Title;
+                    $scope.description = response.data.Description;
+                },
+                function errorCallback(response) {
+                    initializeAndOpenErrorPopup(response);
+                }
+            );
+
             $scope.id = index;
             isExist = true;
 
@@ -125,7 +139,7 @@
             $scope.isVisibleErrorPopup = true;
             $scope.errorStatusCode = response.status;
             $scope.errorHeader = response.statusText;
-            $scope.errorMessage = response.data;
+            $scope.errorMessage = response.data.Message;
         };
 
     }]);

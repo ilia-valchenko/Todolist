@@ -103,6 +103,5 @@ D:\Git\todolist\TodoList\DAL\bin\Debug\Nest.pdb
 D:\Git\todolist\TodoList\DAL\bin\Debug\Nest.xml
 D:\Git\todolist\TodoList\DAL\bin\Debug\Newtonsoft.Json.xml
 D:\Git\todolist\TodoList\DAL\bin\Debug\NHibernate.xml
-D:\Git\todolist\TodoList\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\Git\todolist\TodoList\DAL\obj\Debug\DAL.dll
 D:\Git\todolist\TodoList\DAL\obj\Debug\DAL.pdb

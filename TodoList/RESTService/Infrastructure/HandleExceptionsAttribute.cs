@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Web.Http.Filters;
 using Logger;
+using Newtonsoft.Json;
 
 namespace RESTService.Infrastructure
 {
@@ -20,7 +21,7 @@ namespace RESTService.Infrastructure
 
             context.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
             {
-                Content = new StringContent($"Oops! Sorry! Something went wrong. Error message: {context.Exception.Message}. See the link for more information: {context.Exception.HelpLink}")
+                Content = new StringContent(JsonConvert.SerializeObject(new { Message = context.Exception.Message }))
             };
         }
     }
