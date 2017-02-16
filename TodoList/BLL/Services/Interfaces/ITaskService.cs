@@ -5,11 +5,11 @@ namespace BLL.Services.Interfaces
 {
     public interface ITaskService
     {
-        BllTask Create(BllTask task);
-        void Update(BllTask task);
+        TaskModel Create(TaskModel task);
+        void Update(TaskModel task);
         void Delete(int id);
-        BllTask GetById(int id);
-        IEnumerable<BllTask> GetAll();
-        IEnumerable<BllTask> GetQueryResults(string query);
+        TaskModel GetById(int id);
+        IEnumerable<TaskModel> GetAll();
+        IEnumerable<TaskModel> GetQueryResults(string query);
     }
 }

@@ -19,8 +19,8 @@ namespace RESTService.Controllers
         [HttpGet]
         public IHttpActionResult ShowTodoList()
         {
-            IEnumerable<BllTask> bllTasks = taskService.GetAll();
-            IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(bllTasks);
+            IEnumerable<TaskModel> TaskModels = taskService.GetAll();
+            IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(TaskModels);
             var jsonTasks = Json(viewModelTasks);
             return jsonTasks;
         }
@@ -28,8 +28,8 @@ namespace RESTService.Controllers
         [HttpGet]
         public IHttpActionResult Details(int id)
         {
-            BllTask detailedBllTask = taskService.GetById(id);
-            TaskViewModel detailedTaskViewModel = Mapper.Map<TaskViewModel>(detailedBllTask);
+            TaskModel detailedTaskModel = taskService.GetById(id);
+            TaskViewModel detailedTaskViewModel = Mapper.Map<TaskViewModel>(detailedTaskModel);
             var detailedJsonTask = Json(detailedTaskViewModel);
             return detailedJsonTask;
         }
@@ -39,9 +39,9 @@ namespace RESTService.Controllers
         {
             if(ModelState.IsValid)
             {
-                BllTask task = Mapper.Map<BllTask>(createTaskViewModel);
-                BllTask commitedBllTask = taskService.Create(task);
-                TaskViewModel commitedViewModelTask = Mapper.Map<TaskViewModel>(commitedBllTask);
+                TaskModel task = Mapper.Map<TaskModel>(createTaskViewModel);
+                TaskModel commitedTaskModel = taskService.Create(task);
+                TaskViewModel commitedViewModelTask = Mapper.Map<TaskViewModel>(commitedTaskModel);
                 var jsonCommitedTaskViewModel = Json(commitedViewModelTask);
                 return jsonCommitedTaskViewModel;
             }
@@ -56,7 +56,7 @@ namespace RESTService.Controllers
         {
             if(ModelState.IsValid)
             {
-                BllTask task = Mapper.Map<BllTask>(editTaskViewModel);
+                TaskModel task = Mapper.Map<TaskModel>(editTaskViewModel);
                 taskService.Update(task);
                 return Ok();
             }
@@ -77,8 +77,8 @@ namespace RESTService.Controllers
         [ActionName("search")]
         public IHttpActionResult GetQueryResults(string query)
         {
-            IEnumerable<BllTask> bllTasks = taskService.GetQueryResults(query);
-            IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(bllTasks);
+            IEnumerable<TaskModel> TaskModels = taskService.GetQueryResults(query);
+            IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(TaskModels);
             var jsonQueryResults = Json(viewModelTasks);
             return jsonQueryResults;
         }  

@@ -4,10 +4,6 @@ using System.Web.Http;
 using Bootstrap.AutoMapper;
 using Microsoft.Practices.Unity;
 using System.Web.Http.Filters;
-using System;
-
-using RESTService.Infrastructure;
-using Logger;
 
 namespace RESTService
 {

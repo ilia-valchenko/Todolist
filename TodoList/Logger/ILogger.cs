@@ -4,6 +4,6 @@ namespace Logger
 {
     public interface ILogger
     {
-        void LogError(Exception exception);
+        void LogError(ErrorModel error);
     }
 }

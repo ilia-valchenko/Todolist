@@ -1,5 +1,4 @@
-﻿using System;
-using NLog;
+﻿using NLog;
 
 namespace Logger
 {
@@ -12,9 +11,9 @@ namespace Logger
             logger = LogManager.GetCurrentClassLogger();
         }
 
-        public void LogError(Exception exception)
+        public void LogError(ErrorModel error)
         {
-            logger.Error(exception);
+            logger.Error(error);
         }
     }
 }

@@ -24,7 +24,7 @@
         $scope.submitNewTask = function () {
 
             if (isExist) {
-                var data = { "id": $scope.tasks[$scope.id].Id, "title": $scope.title, "description": $scope.description, "publishDate": $scope.tasks[$scope.id].PublishDate, "IsCompleted": $scope.tasks[$scope.id].IsCompleted };
+                var data = { "id": $scope.tasks[$scope.id].Id, "title": $scope.title, "description": $scope.description };
 
                 $http.put(
                     '/api/task',
@@ -139,7 +139,7 @@
             $scope.isVisibleErrorPopup = true;
             $scope.errorStatusCode = response.status;
             $scope.errorHeader = response.statusText;
-            $scope.errorMessage = response.data.Message;
+            $scope.errorMessage = response.data;
         };
 
     }]);

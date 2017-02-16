@@ -10,12 +10,12 @@ namespace RESTService.Mappers
     {
         public void CreateMap(IProfileExpression mapper)
         {
-            mapper.CreateMap<BllTask, TaskViewModel>();
-            mapper.CreateMap<TaskViewModel, BllTask>();
-            mapper.CreateMap<DalTask, BllTask>();
-            mapper.CreateMap<BllTask, DalTask>();
-            mapper.CreateMap<CreateTaskViewModel, BllTask>();
-            mapper.CreateMap<EditTaskViewModel, BllTask>();
+            mapper.CreateMap<TaskModel, TaskViewModel>().ReverseMap();
+            //mapper.CreateMap<TaskViewModel, TaskModel>();
+            mapper.CreateMap<TaskEntity, TaskModel>();
+            mapper.CreateMap<TaskModel, TaskEntity>();
+            mapper.CreateMap<CreateTaskViewModel, TaskModel>();
+            mapper.CreateMap<EditTaskViewModel, TaskModel>();
         }
     }
 }

@@ -79,10 +79,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\DalTask.cs" />
-    <Compile Include="Entities\DalTaskMap.cs" />
-    <Compile Include="Repositories\Concrete\ElasticRepository.cs" />
-    <Compile Include="Repositories\Concrete\TaskRepository.cs" />
+    <Compile Include="Entities\TaskEntity.cs" />
+    <Compile Include="Entities\TaskEntityMap.cs" />
+    <Compile Include="Repositories\ElasticRepositories\ElasticRepository.cs" />
+    <Compile Include="Repositories\DatabaseRepositories\TaskRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Interfaces\IElasticRepository.cs" />
     <Compile Include="Repositories\Interfaces\IRepository.cs" />

@@ -185,7 +185,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\BootstrapperTypeRegister.cs" />
-    <Compile Include="Infrastructure\HandleExceptionsAttribute.cs" />
+    <Compile Include="Handlers\HandleExceptionsAttribute.cs" />
+    <Compile Include="Infrastructure\Factories\ElasticClientFactory.cs" />
+    <Compile Include="Infrastructure\Factories\FactorySessionFactory.cs" />
+    <Compile Include="Infrastructure\Factories\Interfacies\IElasticClientFactory.cs" />
+    <Compile Include="Infrastructure\Factories\Interfacies\IFactorySessionFactory.cs" />
     <Compile Include="Infrastructure\RegisterHelper.cs" />
     <Compile Include="Infrastructure\UnityResolver.cs" />
     <Compile Include="Mappers\BootstrapperAutoMapper.cs" />
@@ -220,9 +224,9 @@
       <Project>{0c32ddf9-1509-4fc8-8e72-d69dde26acab}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logger\Logger.csproj">
+    <ProjectReference Include="..\Logger\Infrastructure.csproj">
       <Project>{fa3339f5-b266-4798-a920-b934c6819ca9}</Project>
-      <Name>Logger</Name>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
