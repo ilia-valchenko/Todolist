@@ -4,7 +4,7 @@ using BLL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
 using DAL.Entities;
 using BLL.Models;
-using AutoMapper;
+using Infrastructure.Mapper;
 
 namespace BLL.Services
 {
@@ -14,7 +14,7 @@ namespace BLL.Services
         private readonly IElasticRepository elasticRepository;
         private readonly string indexName;
 
-        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository, string indexName)
+        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository, IMapper mapper, string indexName)
         {
             this.taskRepository = taskRepository;
             this.elasticRepository = elasticRepository;
@@ -66,8 +66,8 @@ namespace BLL.Services
         #region Get operations
         public IEnumerable<TaskModel> GetAll()
         {
-            IEnumerable<TaskEntity> TaskEntitys = elasticRepository.GetAll(indexName);
-            IEnumerable<TaskModel> TaskModels = Mapper.Map<IEnumerable<TaskModel>>(TaskEntitys);
+            IEnumerable<TaskEntity> TaskEntities = elasticRepository.GetAll(indexName);
+            IEnumerable<TaskModel> TaskModels = Mapper.Map<IEnumerable<TaskModel>>(TaskEntities);
             return TaskModels;
         }
 

@@ -21,7 +21,7 @@
             <small>Date: {{task.PublishDate | date: 'MM/dd/yyyy @ h:mma'}}</small>
             <footer>
                 <small>
-                    Is completed: <input type="checkbox" ng-checked="{{task.IsCompleted}}" ng-click="task.IsCompleted = !task.IsCompleted;"/> | <a href="#" ng-click="loadTaskToPopup($index)">Edit</a> | <a href="#" ng-click="deleteTask($index)">Delete</a>
+                    Is completed: <input type="checkbox" ng-checked="{{task.IsCompleted}}" ng-click="task.IsCompleted = !task.IsCompleted;"/> | <a href="#" ng-click="editTask($index)">Edit</a> | <a href="#" ng-click="deleteTask($index)">Delete</a>
                 </small>
             </footer>
         </article>

@@ -2,25 +2,31 @@
 using BLL.Services.Interfaces;
 using System.Collections.Generic;
 using RESTService.ViewModels;
-using AutoMapper;
 using BLL.Models;
+using Infrastructure.Mapper;
 
 namespace RESTService.Controllers
 {
     public class TaskController : ApiController
     {
         private readonly ITaskService taskService;
+        private readonly IMapper mapper;
 
-        public TaskController(ITaskService taskService)
+        public TaskController(ITaskService taskService, IMapper mapper)
         {
             this.taskService = taskService;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public IHttpActionResult ShowTodoList()
         {
-            IEnumerable<TaskModel> TaskModels = taskService.GetAll();
-            IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(TaskModels);
+            IEnumerable<TaskModel> taskModels = taskService.GetAll();
+
+            //IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(TaskModels);
+            IEnumerable<TaskViewModel> viewModelTasks = mapper.Map<IEnumerable<TaskModel>, IEnumerable<TaskViewModel>>(taskModels);
+
+
             var jsonTasks = Json(viewModelTasks);
             return jsonTasks;
         }

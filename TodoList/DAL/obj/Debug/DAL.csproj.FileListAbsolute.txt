@@ -105,3 +105,13 @@ D:\Git\todolist\TodoList\DAL\bin\Debug\Newtonsoft.Json.xml
 D:\Git\todolist\TodoList\DAL\bin\Debug\NHibernate.xml
 D:\Git\todolist\TodoList\DAL\obj\Debug\DAL.dll
 D:\Git\todolist\TodoList\DAL\obj\Debug\DAL.pdb
+D:\Git\todolist\TodoList\DAL\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Git\todolist\TodoList\DAL\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\Git\todolist\TodoList\DAL\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Git\todolist\TodoList\DAL\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\Git\todolist\TodoList\DAL\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\Git\todolist\TodoList\DAL\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\Git\todolist\TodoList\DAL\bin\Debug\Microsoft.Practices.Unity.xml
+D:\Git\todolist\TodoList\DAL\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+D:\Git\todolist\TodoList\DAL\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+D:\Git\todolist\TodoList\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

@@ -1,6 +1,5 @@
 ﻿using System.Web.Http;
 using Microsoft.Practices.Unity;
-using Bootstrap;
 using RESTService.Infrastructure;
 
 namespace RESTService
@@ -9,9 +8,13 @@ namespace RESTService
     {
         public static void Register(HttpConfiguration config)
         {
-            IUnityContainer container = (IUnityContainer)Bootstrapper.Container;
+            IUnityContainer container = new UnityContainer();
+
+            Bootstrapper.RegisterTypes(container);
+            Bootstrapper.RegisterMaps();
+            
             config.DependencyResolver = new UnityResolver(container);
-            RegisterHelper.MapRoutes(config);
+            RegisterRoutesHelper.MapRoutes(config);
         }
     }
 }

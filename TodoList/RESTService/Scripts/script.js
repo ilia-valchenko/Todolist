@@ -100,29 +100,17 @@
 
         };
 
-        $scope.loadTaskToPopup = function (index) {
-
-            $http.get(
-                '/api/task',
-                {
-                    params: { id: $scope.tasks[index].Id }
-                }
-            ).then(
-                function successCallback(response) {
-                    $scope.title = response.data.Title;
-                    $scope.description = response.data.Description;
-                },
-                function errorCallback(response) {
-                    initializeAndOpenErrorPopup(response);
-                }
-            );
+        $scope.editTask = function (index) {
+            $scope.title = $scope.tasks[index].Title.replace(/<(\/?em)>/gm, '');
+           
+            $scope.description = $scope.tasks[index].Description;
 
             $scope.id = index;
             isExist = true;
 
-            // simplify it
             $scope.isVisiblePopup = true;
         };
+
 
         $scope.createTask = function () {
             // Clear updating information date

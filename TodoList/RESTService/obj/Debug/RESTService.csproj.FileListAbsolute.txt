@@ -296,7 +296,6 @@ D:\GitProjects\todo\TodoList\RESTService\bin\NLog.xml
 D:\GitProjects\todo\TodoList\RESTService\obj\Debug\RESTService.csprojResolveAssemblyReference.cache
 D:\GitProjects\todo\TodoList\RESTService\obj\Debug\RESTService.dll
 D:\GitProjects\todo\TodoList\RESTService\obj\Debug\RESTService.pdb
-D:\Git\todolist\TodoList\RESTService\bin\AutoMapper.Net4.dll
 D:\Git\todolist\TodoList\RESTService\bin\ApplicationInsights.config
 D:\Git\todolist\TodoList\RESTService\bin\roslyn\csc.exe
 D:\Git\todolist\TodoList\RESTService\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -316,9 +315,6 @@ D:\Git\todolist\TodoList\RESTService\bin\RESTService.dll
 D:\Git\todolist\TodoList\RESTService\bin\RESTService.pdb
 D:\Git\todolist\TodoList\RESTService\bin\AutoMapper.dll
 D:\Git\todolist\TodoList\RESTService\bin\BLL.dll
-D:\Git\todolist\TodoList\RESTService\bin\Bootstrapper.AutoMapper.dll
-D:\Git\todolist\TodoList\RESTService\bin\Bootstrapper.dll
-D:\Git\todolist\TodoList\RESTService\bin\Bootstrapper.UnityExtension.dll
 D:\Git\todolist\TodoList\RESTService\bin\DAL.dll
 D:\Git\todolist\TodoList\RESTService\bin\Elasticsearch.Net.dll
 D:\Git\todolist\TodoList\RESTService\bin\FluentNHibernate.dll
@@ -372,3 +368,5 @@ D:\Git\todolist\TodoList\RESTService\bin\NLog.xml
 D:\Git\todolist\TodoList\RESTService\obj\Debug\RESTService.csprojResolveAssemblyReference.cache
 D:\Git\todolist\TodoList\RESTService\obj\Debug\RESTService.dll
 D:\Git\todolist\TodoList\RESTService\obj\Debug\RESTService.pdb
+D:\Git\todolist\TodoList\RESTService\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\Git\todolist\TodoList\RESTService\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
