@@ -14,7 +14,7 @@ namespace Logger.Mapper
 
         public Mapper()
         {
-            //autoMapper = AutoMapper.Mapper
+            //autoMapper = AutoMapper.Mapper       
         }
 
         public IEnumerable<TTo> Map<TFrom, TTo>(IEnumerable<TFrom> collectionFrom)

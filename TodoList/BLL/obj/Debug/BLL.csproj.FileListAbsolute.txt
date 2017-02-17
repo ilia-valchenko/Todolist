@@ -146,3 +146,8 @@ D:\Git\todolist\TodoList\BLL\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 D:\Git\todolist\TodoList\BLL\bin\Debug\Microsoft.Practices.Unity.xml
 D:\Git\todolist\TodoList\BLL\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
 D:\Git\todolist\TodoList\BLL\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+D:\Git\todolist\TodoList\BLL\bin\Debug\NLog.config
+D:\Git\todolist\TodoList\BLL\bin\Debug\Logger.dll
+D:\Git\todolist\TodoList\BLL\bin\Debug\NLog.dll
+D:\Git\todolist\TodoList\BLL\bin\Debug\Logger.pdb
+D:\Git\todolist\TodoList\BLL\bin\Debug\NLog.xml

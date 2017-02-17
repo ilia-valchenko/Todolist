@@ -5,9 +5,10 @@ using BLL.Services;
 using Infrastructure.Logger;
 using RESTService.Handlers;
 using System.Web.Http.Filters;
-using AutoMapper;
 using BLL.Models;
 using RESTService.ViewModels;
+using AutoMapper;
+using AutoMapper.Configuration;
 
 namespace RESTService.Infrastructure
 {
@@ -26,15 +27,15 @@ namespace RESTService.Infrastructure
                                         "taskmanager"));
         }
 
-        public static void RegisterMaps()
+        public static void RegisterMaps(MapperConfigurationExpression config)
         {
-            BLL.Infrastructure.Bootstrapper.RegisterMaps();
+            BLL.Infrastructure.Bootstrapper.RegisterMaps(config);
 
-            Mapper.Initialize(cfg => {
-                cfg.CreateMap<TaskModel, TaskViewModel>().ReverseMap();
-                cfg.CreateMap<EditTaskViewModel, TaskModel>();
-                cfg.CreateMap<CreateTaskViewModel, TaskModel>();
-            });
+            config.CreateMap<TaskModel, TaskViewModel>();
+            config.CreateMap<CreateTaskViewModel, TaskModel>();
+            config.CreateMap<EditTaskViewModel, TaskModel>();
+
+            Mapper.Initialize(config);
         }
     }
 }

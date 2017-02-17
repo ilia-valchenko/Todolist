@@ -18,11 +18,9 @@ namespace BLL.Infrastructure
             container.RegisterType<IElasticRepository, ElasticRepository>(new HierarchicalLifetimeManager());
         }
 
-        public static void RegisterMaps()
+        public static void RegisterMaps(IMapperConfigurationExpression config)
         {
-            Mapper.Initialize(cfg => {
-                cfg.CreateMap<TaskEntity, TaskModel>().ReverseMap();
-            });
+            config.CreateMap<TaskEntity, TaskModel>().ReverseMap();
         }
     }
 }

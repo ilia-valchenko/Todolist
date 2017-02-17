@@ -5,6 +5,7 @@ using DAL.Repositories.Interfaces;
 using DAL.Entities;
 using BLL.Models;
 using Infrastructure.Mapper;
+using AutoMapper;
 
 namespace BLL.Services
 {
@@ -14,7 +15,7 @@ namespace BLL.Services
         private readonly IElasticRepository elasticRepository;
         private readonly string indexName;
 
-        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository, IMapper mapper, string indexName)
+        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository, string indexName)
         {
             this.taskRepository = taskRepository;
             this.elasticRepository = elasticRepository;

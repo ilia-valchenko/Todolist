@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 using Microsoft.Practices.Unity;
 using RESTService.Infrastructure;
+using AutoMapper.Configuration;
 
 namespace RESTService
 {
@@ -9,9 +10,10 @@ namespace RESTService
         public static void Register(HttpConfiguration config)
         {
             IUnityContainer container = new UnityContainer();
+            MapperConfigurationExpression mapperConfig = new MapperConfigurationExpression();
 
             Bootstrapper.RegisterTypes(container);
-            Bootstrapper.RegisterMaps();
+            Bootstrapper.RegisterMaps(mapperConfig);
             
             config.DependencyResolver = new UnityResolver(container);
             RegisterRoutesHelper.MapRoutes(config);

@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using RESTService.ViewModels;
 using BLL.Models;
 using Infrastructure.Mapper;
+using AutoMapper;
 
 namespace RESTService.Controllers
 {
     public class TaskController : ApiController
     {
         private readonly ITaskService taskService;
-        private readonly IMapper mapper;
+        //private readonly IMapper mapper;
 
-        public TaskController(ITaskService taskService, IMapper mapper)
+        public TaskController(ITaskService taskService)
         {
             this.taskService = taskService;
-            this.mapper = mapper;
+            //this.mapper = mapper;
         }
 
         [HttpGet]
@@ -23,8 +24,8 @@ namespace RESTService.Controllers
         {
             IEnumerable<TaskModel> taskModels = taskService.GetAll();
 
-            //IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(TaskModels);
-            IEnumerable<TaskViewModel> viewModelTasks = mapper.Map<IEnumerable<TaskModel>, IEnumerable<TaskViewModel>>(taskModels);
+            IEnumerable<TaskViewModel> viewModelTasks = Mapper.Map<IEnumerable<TaskViewModel>>(taskModels);
+            //IEnumerable<TaskViewModel> viewModelTasks = mapper.Map<IEnumerable<TaskModel>, IEnumerable<TaskViewModel>>(taskModels);
 
 
             var jsonTasks = Json(viewModelTasks);
