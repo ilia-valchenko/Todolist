@@ -1,34 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Infrastructure.Mapper;
+﻿using System.Collections.Generic;
 using AutoMapper;
+using AutoMapper.Configuration;
 
-namespace Logger.Mapper
+namespace Common.Mapper
 {
-    public class Mapper : Infrastructure.Mapper.IMapper
+    public class Mapper : Common.Mapper.IMapper
     {
-        private readonly AutoMapper.Mapper autoMapper;
+        private readonly AutoMapper.IMapper autoMapper;
 
-        public Mapper()
+        public Mapper(MapperConfigurationExpression config)
         {
-            //autoMapper = AutoMapper.Mapper       
+            MapperConfiguration mapperConfig = new MapperConfiguration(config);
+            autoMapper = mapperConfig.CreateMapper();
         }
 
         public IEnumerable<TTo> Map<TFrom, TTo>(IEnumerable<TFrom> collectionFrom)
             where TFrom : class
             where TTo : class
         {
-            throw new NotImplementedException();
+            IEnumerable<TTo> result = autoMapper.Map<IEnumerable<TTo>>(collectionFrom);
+            return result;
         }
 
         public TTo Map<TFrom, TTo>(TFrom from)
             where TFrom : class
             where TTo : class
         {
-            throw new NotImplementedException();
+            TTo result = autoMapper.Map<TTo>(from);
+            return result;
         }
     }
 }

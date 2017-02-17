@@ -1,9 +1,9 @@
 ﻿using NLog;
-using Infrastructure.Logger.Models;
+using Common.Logger.Models;
 
 namespace Infrastructure.Logger
 {
-    public sealed class NLogLogger :  ILogger
+    public sealed class NLogLogger :  Common.Logger.ILogger
     {
         private readonly NLog.Logger logger;
 

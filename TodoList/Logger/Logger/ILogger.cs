@@ -1,6 +1,6 @@
-﻿using Infrastructure.Logger.Models;
+﻿using Common.Logger.Models;
 
-namespace Infrastructure.Logger
+namespace Common.Logger
 {
     public interface ILogger
     {

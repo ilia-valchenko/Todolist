@@ -2,8 +2,8 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http.Filters;
-using Infrastructure.Logger;
-using Infrastructure.Logger.Models;
+using Common.Logger;
+using Common.Logger.Models;
 
 namespace RESTService.Handlers
 {

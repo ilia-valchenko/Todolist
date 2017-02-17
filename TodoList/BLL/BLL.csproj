@@ -75,9 +75,9 @@
       <Project>{0c32ddf9-1509-4fc8-8e72-d69dde26acab}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logger\Infrastructure.csproj">
+    <ProjectReference Include="..\Logger\Common.csproj">
       <Project>{fa3339f5-b266-4798-a920-b934c6819ca9}</Project>
-      <Name>Infrastructure</Name>
+      <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

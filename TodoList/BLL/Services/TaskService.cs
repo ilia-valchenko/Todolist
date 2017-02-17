@@ -4,8 +4,7 @@ using BLL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
 using DAL.Entities;
 using BLL.Models;
-using Infrastructure.Mapper;
-using AutoMapper;
+using Common.Mapper;
 
 namespace BLL.Services
 {
@@ -13,13 +12,14 @@ namespace BLL.Services
     {
         private readonly ITaskRepository taskRepository;
         private readonly IElasticRepository elasticRepository;
-        private readonly string indexName;
+        private readonly IMapper mapper;
+        private const string indexName = "taskmanager";
 
-        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository, string indexName)
+        public TaskService(ITaskRepository taskRepository, IElasticRepository elasticRepository, IMapper mapper)
         {
             this.taskRepository = taskRepository;
             this.elasticRepository = elasticRepository;
-            this.indexName = indexName;
+            this.mapper = mapper;
         }
 
         #region CRUD
@@ -27,12 +27,12 @@ namespace BLL.Services
         {
             task.PublishDate = DateTime.Now;
 
-            TaskEntity createdTaskEntity = Mapper.Map<TaskEntity>(task);
+            TaskEntity createdTaskEntity = mapper.Map<TaskModel, TaskEntity>(task);
 
             createdTaskEntity.Id = taskRepository.Create(createdTaskEntity);
             elasticRepository.Create(createdTaskEntity, indexName);
 
-            TaskModel createdTaskModel = Mapper.Map<TaskModel>(createdTaskEntity);
+            TaskModel createdTaskModel = mapper.Map<TaskEntity, TaskModel>(createdTaskEntity);
 
             return createdTaskModel;
         }
@@ -68,7 +68,7 @@ namespace BLL.Services
         public IEnumerable<TaskModel> GetAll()
         {
             IEnumerable<TaskEntity> TaskEntities = elasticRepository.GetAll(indexName);
-            IEnumerable<TaskModel> TaskModels = Mapper.Map<IEnumerable<TaskModel>>(TaskEntities);
+            IEnumerable<TaskModel> TaskModels = mapper.Map<IEnumerable<TaskEntity>, IEnumerable<TaskModel>>(TaskEntities);
             return TaskModels;
         }
 
@@ -91,22 +91,22 @@ namespace BLL.Services
                 throw new ArgumentException("The Id of seeking task can't be less then zero.");
             }
 
-            TaskEntity TaskEntity = taskRepository.GetById(id);
-            TaskModel TaskModel = Mapper.Map<TaskModel>(TaskEntity);
-            return TaskModel;
+            TaskEntity taskEntity = taskRepository.GetById(id);
+            TaskModel taskModel = mapper.Map<TaskEntity, TaskModel>(taskEntity);
+            return taskModel;
         }
 
         public IEnumerable<TaskModel> GetQueryResults(string query)
         {
             if (String.IsNullOrEmpty(query))
             {
-                IEnumerable<TaskEntity> TaskEntitys = elasticRepository.GetAll(indexName);
-                IEnumerable<TaskModel> TaskModels = Mapper.Map<IEnumerable<TaskModel>>(TaskEntitys);
-                return TaskModels;
+                IEnumerable<TaskEntity> taskEntities = elasticRepository.GetAll(indexName);
+                IEnumerable<TaskModel> taskModels = mapper.Map<IEnumerable<TaskEntity>, IEnumerable<TaskModel>>(taskEntities);
+                return taskModels;
             }
 
-            IEnumerable<TaskEntity> queryResultTaskEntitys = elasticRepository.GetQueryResults(query.ToLowerInvariant(), indexName);
-            IEnumerable<TaskModel> queryResultTaskModels = Mapper.Map<IEnumerable<TaskModel>>(queryResultTaskEntitys);
+            IEnumerable<TaskEntity> queryResultTaskEntities = elasticRepository.GetQueryResults(query.ToLowerInvariant(), indexName);
+            IEnumerable<TaskModel> queryResultTaskModels = mapper.Map<IEnumerable<TaskEntity>, IEnumerable<TaskModel>>(queryResultTaskEntities);
             return queryResultTaskModels;
         } 
         #endregion

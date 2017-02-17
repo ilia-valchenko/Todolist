@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Infrastructure.Mapper
+namespace Common.Mapper
 {
     public interface IMapper
     {

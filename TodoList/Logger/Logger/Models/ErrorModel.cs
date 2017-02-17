@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Infrastructure.Logger.Models
+namespace Common.Logger.Models
 {
     public sealed class ErrorModel
     {
